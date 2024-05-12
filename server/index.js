@@ -6,11 +6,15 @@ import dotenv from 'dotenv';
 //import postRoutes from './routes/posts.js';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import clientRoutes from './routes/client.js';
 import generalRoutes from './routes/general.js';
+import managementRoutes from './routes/management.js';
+import salesRoutes from './routes/sales.js';
+
+/*
 import userRoutes from './routes/users.js';
 import authRoutes from './routes/auth.js';
 import adminRoutes from './routes/admin.js';
-import clientRoutes from './routes/client.js';
 import profileRoutes from './routes/profile.js';
 import postRoutes from './routes/posts.js';
 import studentRoutes from './routes/student.js';
@@ -23,7 +27,6 @@ import lessonRoutes from './routes/lesson.js';
 import examRoutes from './routes/exam.js';
 import resultRoutes from './routes/result.js';
 import paymentRoutes from './routes/payment.js';
-import managementRoutes from './routes/management.js';
 import notificationRoutes from './routes/notification.js';
 import reportRoutes from './routes/report.js';
 import settingRoutes from './routes/setting.js';
@@ -31,11 +34,10 @@ import supportRoutes from './routes/support.js';
 import chatRoutes from './routes/chat.js';
 import eventRoutes from './routes/event.js';
 import feedbackRoutes from './routes/feedback.js';
-import salesRoutes from './routes/sales.js';
 import subscriptionRoutes from './routes/subscription.js';
 import apiRoutes from './routes/api.js';
 import apiV1Routes from './routes/apiV1.js';
-
+*/
 
 /* configuration */
 dotenv.config();
@@ -54,6 +56,7 @@ app.use(cors());
 app.use("/general", generalRoutes);
 
 //users and admins
+/*
 app.use('/user', userRoutes);
 app.use('/auth', authRoutes);
 app.use("/admin", adminRoutes);
@@ -75,7 +78,6 @@ app.use("/result", resultRoutes);
 
 //payments
 app.use("/payment", paymentRoutes);
-app.use("/management", managementRoutes);
 app.use("/notification", notificationRoutes);
 app.use("/report", reportRoutes);
 app.use("/setting", settingRoutes);
@@ -83,15 +85,17 @@ app.use("/support", supportRoutes);
 app.use("/chat", chatRoutes);
 app.use("/event", eventRoutes);
 app.use("/feedback", feedbackRoutes);
-app.use("/sales", salesRoutes);
 app.use("/subscription", subscriptionRoutes);
+*/
 app.use("/client", clientRoutes);
+app.use("/management", managementRoutes);
+app.use("/sales", salesRoutes);
 
-
+/*
 //api routes
 app.use('/api', apiRoutes);
 app.use('/api/v1', apiV1Routes);
-
+*/
 
 
 /* middleware */
@@ -103,6 +107,7 @@ app.use((error, req, res, next) => {
 });
 
 /* database connection */
+/*
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
@@ -111,4 +116,4 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-
+*/
