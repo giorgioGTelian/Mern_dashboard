@@ -42,7 +42,7 @@ import apiV1Routes from './routes/apiV1.js';
 /* configuration */
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 9000; // process.env.PORT is for deployment
 app.use(express.json({ limit: '30mb', extended: true })); // limit the size of the data that can be sent to the API
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -107,13 +107,8 @@ app.use((error, req, res, next) => {
 });
 
 /* database connection */
-/*
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+
+mongoose.connect(process.env.MONGO_URL)
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message));
 
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true);
-*/
