@@ -53,7 +53,7 @@ app.use(cors());
 
 /* routes */
 
-app.use("/general", generalRoutes);
+app.use("/general", generalRoutes);  
 
 //users and admins
 /*
