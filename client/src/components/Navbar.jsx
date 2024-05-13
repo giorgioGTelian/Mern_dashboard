@@ -5,13 +5,24 @@ import {
   Menu as MenuIcon,
   Search,
   SettingsOutlined,
-  ArrowDropDownCircleOutlined,
+  ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import FlexBetween from './FlexBetween';
 import { useDispatch } from 'react-redux';
 import { setMode } from 'state';
 import profileImage from 'assets/me.png';
-import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material';
+import {
+    AppBar,
+    Button,
+    Box,
+    Typography,
+    IconButton,
+    InputBase,
+    Toolbar,
+    Menu,
+    MenuItem,
+    useTheme,
+  } from "@mui/material";
 
 const Navbar = () => {
     const dispatch = useDispatch();
@@ -37,16 +48,71 @@ const Navbar = () => {
                     gap="3rem"
                     padding="0.1rem 1rem"
                     >
-                        <InputBase placeholder='Search...' />
-                    <IconButton onClick={() => dispatch(setMode('light'))}>
-                        <LightModeOutlined />
-                    <Search />
-                    </IconButton>
-                    <IconButton onClick={() => dispatch(setMode('dark'))}>
-                        <DarkModeOutlined />
-                    </IconButton>
+                    <InputBase placeholder='Search...' />
+                        <IconButton>
+                        <Search />
+                        </IconButton>
                     </FlexBetween>
                 </FlexBetween>
+                <FlexBetween gap="1.5rem">
+          <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+              <DarkModeOutlined sx={{ fontSize: "25px" }} />
+            ) : (
+              <LightModeOutlined sx={{ fontSize: "25px" }} />
+            )}
+          </IconButton>
+          <IconButton>
+            <SettingsOutlined sx={{ fontSize: "25px" }} />
+          </IconButton>
+
+          <FlexBetween>
+            <Button
+              
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                textTransform: "none",
+                gap: "1rem",
+              }}
+            >
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="32px"
+                width="32px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign="left">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.85rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                 
+                </Typography>
+                <Typography
+                  fontSize="0.75rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                
+                </Typography>
+              </Box>
+              <ArrowDropDownOutlined
+                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+              />
+            </Button>
+            <Menu
+              
+              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+            >
+              <MenuItem >Log Out</MenuItem>
+            </Menu>
+          </FlexBetween>
+        </FlexBetween>
             </Toolbar>
         </AppBar>
     )
