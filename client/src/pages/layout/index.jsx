@@ -21,7 +21,7 @@ return (
     <Box flexGrow={1}>
         <Navbar
             isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen} 
         />
         <Outlet />
     </Box>
