@@ -20,7 +20,6 @@ import {
   ShoppingCartOutlined,
   Groups2Outlined,
   ReceiptLongOutlined,
-  PublicOutlined,
   PointOfSaleOutlined,
   TodayOutlined,
   CalendarMonthOutlined,
@@ -31,7 +30,7 @@ import {
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
-import profileImage from "assets/me.png";
+
 
 const navItems = [
   {
@@ -39,27 +38,31 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
-    text: "Client Facing",
+    text: "Gestione didattica",
     icon: null,
   },
   {
-    text: "Products",
+    text: "Anagrafica",
+    icon: null,
+  },
+  {
+    text: "CRM",
+    icon: null,
+  },
+  {
+    text: "Prodotti",
     icon: <ShoppingCartOutlined />,
   },
   {
-    text: "Customers",
+    text: "Clienti",
     icon: <Groups2Outlined />,
   },
   {
-    text: "Transactions",
+    text: "Transazioni",
     icon: <ReceiptLongOutlined />,
   },
   {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
-  {
-    text: "Sales",
+    text: "Rendicontazione",
     icon: null,
   },
   {
@@ -67,28 +70,32 @@ const navItems = [
     icon: <PointOfSaleOutlined />,
   },
   {
-    text: "Daily",
+    text: "Giornaliero",
     icon: <TodayOutlined />,
   },
   {
-    text: "Monthly",
+    text: "Mensile",
     icon: <CalendarMonthOutlined />,
   },
   {
-    text: "Breakdown",
+    text: "Analisi contabilità",
     icon: <PieChartOutlined />,
   },
   {
-    text: "Management",
+    text: "Impostazioni Gestionale",
     icon: null,
   },
   {
-    text: "Admin",
+    text: "Ammistrazione",
     icon: <AdminPanelSettingsOutlined />,
   },
   {
     text: "Performance",
     icon: <TrendingUpOutlined />,
+  },
+  {
+    text: "Impostazioni generali",
+    icon: <SettingsOutlined />,
   },
 ];
 
@@ -127,11 +134,11 @@ const Sidebar = (
           }}
         >
           <Box width="100%">
-            <Box m="1.5rem 2rem 2rem 3rem">
+            <Box m="1rem 2rem 2rem 1rem">
               <FlexBetween color={theme.palette.secondary.main}>
-                <Box display="flex" alignItems="center" gap="0.5rem">
+                <Box display="flex" alignItems="center" gap="0.1rem">
                   <Typography variant="h4" fontWeight="bold">
-                    MERN DASHBOARD
+                    Scolastico v1
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -145,7 +152,7 @@ const Sidebar = (
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    <Typography key={text} sx={{ m: "0.5rem 0 1rem 3rem" }}>
                       {text}
                     </Typography>
                   );
