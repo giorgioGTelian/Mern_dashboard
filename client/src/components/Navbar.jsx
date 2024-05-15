@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-    import {
-    LightModeOutlined,
-    DarkModeOutlined,
-    Menu as MenuIcon,
-    Search,
-    SettingsOutlined,
-    ArrowDropDownOutlined,
-    } from "@mui/icons-material";
-    import FlexBetween from "./FlexBetween";
-    import { useDispatch } from "react-redux";
-    import { setMode } from "state";
-    import profileImage from "assets/me.png";
-    import {
+import {
+  LightModeOutlined,
+  DarkModeOutlined,
+  Menu as MenuIcon,
+  Search,
+  SettingsOutlined,
+  ArrowDropDownOutlined,
+} from "@mui/icons-material";
+import FlexBetween from "./FlexBetween";
+import { useDispatch } from "react-redux";
+import { setMode } from "state";
+import profileImage from "assets/me.png";
+import {
     AppBar,
     Button,
     Box,
@@ -22,9 +22,13 @@ import React, { useState } from "react";
     Menu,
     MenuItem,
     useTheme,
-    } from "@mui/material";
+    Avatar,
+    Divider,
+    ListItemIcon,
+} from "@mui/material";
+import { Logout, PersonAdd, Settings } from "@mui/icons-material";
 
-    const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
     const dispatch = useDispatch();
     const theme = useTheme();
     
@@ -33,89 +37,127 @@ import React, { useState } from "react";
     const handleClick = (event) => setAnchorEl(event.currentTarget);
     const handleClose = () => setAnchorEl(null);
 
-    return (
-        <AppBar
-        sx={{
-            position: "static",
-            backgroundColor: "none",
-            boxShadow: "none",
-        }}
+return (
+    <AppBar
+    sx={{
+        position: "static",
+        background: "none",
+        boxShadow: "none",
+    }}
+    >
+    <Toolbar sx={{ justifyContent: "space-between" }}>
+        {/* LEFT SIDE */}
+        <FlexBetween>
+        <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            <MenuIcon />
+        </IconButton>
+        <FlexBetween
+            backgroundColor={theme.palette.background.alt}
+            borderRadius="9px"
+            gap="3rem"
+            p="0.1rem 1.5rem"
         >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-            <FlexBetween>
-            <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                <MenuIcon />
-            </IconButton>
-            <FlexBetween
-                backgroundColor={theme.palette.background.alt}
-                borderRadius="9px"
-                gap="3rem"
-                padding="0.1rem 1rem"
-            >
-                <InputBase placeholder="Cerca..." />
-                <IconButton>
-                <Search />
-                </IconButton>
-            </FlexBetween>
-            </FlexBetween>
-            <FlexBetween gap="1.5rem">
-            <IconButton onClick={() => dispatch(setMode())}>
-            {theme.palette.mode === "dark" ? (
-                <DarkModeOutlined sx={{ fontSize: "25px" }} />
-                ) : (
-                <LightModeOutlined sx={{ fontSize: "25px" }} />
-                )}
-            </IconButton>
+            <InputBase placeholder="Search..." />
             <IconButton>
-                <SettingsOutlined sx={{ fontSize: "25px" }} />
+            <Search />
             </IconButton>
-            <FlexBetween>
-                <Button
-                onClick={handleClick}
-                sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    textTransform: "none",
-                    gap: "1rem",
-                }}
+        </FlexBetween>
+        </FlexBetween>
+
+        {/* RIGHT SIDE */}
+        <FlexBetween gap="1.5rem">
+        <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+            <DarkModeOutlined sx={{ fontSize: "25px" }} />
+            ) : (
+            <LightModeOutlined sx={{ fontSize: "25px" }} />
+            )}
+        </IconButton>
+        <IconButton>
+            <SettingsOutlined sx={{ fontSize: "25px" }} />
+        </IconButton>
+
+        <FlexBetween>
+            <Button
+            onClick={handleClick}
+            sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                textTransform: "none",
+                gap: "1rem",
+            }}
+            >
+            <Box textAlign="left">
+                <Typography
+                fontWeight="bold"
+                fontSize="0.85rem"
+                sx={{ color: theme.palette.secondary[100] }}
                 >
-                <Box
-                    component="img"
-                    alt="profile"
-                    src={profileImage}
-                    height="32px"
-                    width="32px"
-                    borderRadius="50%"
-                    sx={{ objectFit: "cover" }}
-                />
-                <Box textAlign="left">
-                    <Typography
-                    fontWeight="bold"
-                    fontSize="0.85rem"
-                    sx={{ color: theme.palette.secondary[100] }}
-                    ></Typography>
-                    <Typography
-                    fontSize="0.75rem"
-                    sx={{ color: theme.palette.secondary[200] }}
-                    ></Typography>
-                </Box>
-                <ArrowDropDownOutlined
-                    sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
-                />
-                </Button>
-                <Menu
-                anchorEl={anchorEl}
-                open={isOpen}
-                onClose={handleClose}
-                anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+                </Typography>
+                <Typography
+                fontSize="0.75rem"
+                sx={{ color: theme.palette.secondary[200] }}
                 >
-                <MenuItem onClick={handleClose}>Log Out</MenuItem>
-                </Menu>
-            </FlexBetween>
-            </FlexBetween>
-        </Toolbar>
-        </AppBar>
-    );
-    };
+                </Typography>
+            </Box>
+            <ArrowDropDownOutlined
+                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+            />
+            </Button>
+            <Menu
+            anchorEl={anchorEl}
+            open={isOpen}
+            onClose={handleClose}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+            PaperProps={{
+                elevation: 0,
+            sx: {
+                overflow: 'visible',
+                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                mt: 1.5,
+                paddingRight: '0 !important',
+                '& .MuiAvatar-root': {
+                width: 32,
+                height: 32,
+                ml: -0.5,
+                mr: 1,
+                },
+            },
+            }}
+            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+            >
+            <MenuItem onClick={handleClose}>
+                <Avatar src={profileImage} /> Profilo
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <Avatar /> account secondario
+                </MenuItem>
+                <Divider />
+                <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                    <PersonAdd fontSize="small" />
+                </ListItemIcon>
+                aggiungi un altro account
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                    <Settings fontSize="small" />
+                </ListItemIcon>
+                Impostazioni
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <ListItemIcon>
+                    <Logout fontSize="small" />
+                </ListItemIcon>
+                esci
+                </MenuItem>
+            </Menu>
+        </FlexBetween>
+        </FlexBetween>
+    </Toolbar>
+    </AppBar>
+);
+};
+
 export default Navbar;

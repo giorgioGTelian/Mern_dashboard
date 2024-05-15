@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -31,6 +30,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 
+//think about how to use Divider from mui/material
 
 const navItems = [
   {
@@ -99,12 +99,12 @@ const navItems = [
   },
 ];
 
-const Sidebar = (
+const Sidebar = ({
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
   isNonMobile,
-) => {
+}) => {
   const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
@@ -134,9 +134,9 @@ const Sidebar = (
           }}
         >
           <Box width="100%">
-            <Box m="1rem 2rem 2rem 1rem">
+            <Box m="1.5rem 2rem 2rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
-                <Box display="flex" alignItems="center" gap="0.1rem">
+                <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
                     Scolastico v1
                   </Typography>
@@ -152,7 +152,7 @@ const Sidebar = (
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "0.5rem 0 1rem 3rem" }}>
+                    <Typography key={text} sx={{ m: "1rem 0 1rem 3rem" }}>
                       {text}
                     </Typography>
                   );
@@ -201,7 +201,7 @@ const Sidebar = (
         </Drawer>
       )}
     </Box>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
