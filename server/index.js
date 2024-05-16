@@ -48,13 +48,14 @@ import { dataUser } from './data/index.js';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9000; // process.env.PORT is for deployment
-app.use(express.json({ limit: '30mb', extended: true })); // limit the size of the data that can be sent to the API
+app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-app.use(morgan('common'));
-app.use(bodyParser.json({ limit: '30mb', extended: true })); // to parse incoming requests with JSON payloads
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: false })); // to parse incoming requests with URL-encoded payloads
+app.use(morgan("common"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+
 
 /* routes */
 
@@ -104,20 +105,25 @@ app.use('/api/v1', apiV1Routes);
 
 
 /* middleware */
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     res.status(404).json({ message: 'Not Found' });
 });
 app.use((error, req, res, next) => {
     res.status(500).json({ message: error.message });
-});
+}); */
 
 /* database connection */
 
 mongoose.connect(process.env.MONGO_URL)
-    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)),
-    
-    //data import one at the time
-    User.insertMany(dataUser)
-    )
-    .catch((error) => console.log(error.message));
+.then(() => {
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
+    /* ONLY ADD DATA ONE TIME - this is the initial data injection from data/index.js */
+    // AffiliateStat.insertMany(dataAffiliateStat);
+    // OverallStat.insertMany(dataOverallStat);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
+    // Transaction.insertMany(dataTransaction);
+    // User.insertMany(dataUser); DONE
+})
+.catch((error) => console.log(`${error} did not connect`));
