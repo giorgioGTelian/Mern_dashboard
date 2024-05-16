@@ -12,3 +12,7 @@ a dashboard using mern stack
 - redux 
 - mui
 - nivo
+
+
+## to follow the project 
+- trello
