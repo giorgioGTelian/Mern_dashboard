@@ -14,7 +14,7 @@ const drawerWidth = isSidebarOpen ? (isNonMobile ? 240 : 56) : 0;
 // Fetch the user data
 const userId = useSelector((state) => state?.global.userId);
 console.log("userId",userId);
-const data = useGetUserQuery(userId);
+const { data } = useGetUserQuery(userId); // Fetch the user data
 console.log("data",data);
 
 return (
