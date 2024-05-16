@@ -39,6 +39,11 @@ import apiRoutes from './routes/api.js';
 import apiV1Routes from './routes/apiV1.js';
 */
 
+/* data import */ 
+import User from './models/User.js';
+import { dataUser } from './data/index.js';
+
+
 /* configuration */
 dotenv.config();
 const app = express();
@@ -109,6 +114,10 @@ app.use((error, req, res, next) => {
 /* database connection */
 
 mongoose.connect(process.env.MONGO_URL)
-    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
+    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)),
+    
+    //data import one at the time
+    User.insertMany(dataUser)
+    )
     .catch((error) => console.log(error.message));
 
