@@ -12,8 +12,9 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 // Define the width of the sidebar based on whether it's open and the screen size
 const drawerWidth = isSidebarOpen ? (isNonMobile ? 240 : 56) : 0;
 // Fetch the user data
-const userId = useSelector((state) => state.global.userId);
-const { data } = useGetUserQuery(userId);
+const userId = useSelector((state) => state?.global.userId);
+console.log("userId",userId);
+const data = useGetUserQuery(userId);
 console.log("data",data);
 
 return (
