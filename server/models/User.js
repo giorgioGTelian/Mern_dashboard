@@ -1,6 +1,6 @@
 //schema that defines the structure of the user data
 import mongoose from 'mongoose';
-
+//TODO add more fields to the user schema - also id
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -22,7 +22,6 @@ const UserSchema = new mongoose.Schema({
     },
     id: {
         type: String,
-        required: true,
     }, 
     city: String,
     state: String,
