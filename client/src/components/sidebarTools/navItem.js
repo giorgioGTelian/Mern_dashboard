@@ -1,4 +1,4 @@
-// navItems.js to be used in Sidebar.jsx
+// navItems.js to be used in Sidebar.jsx making it easier to manage the sidebar items
 
 import React from "react";
 import {

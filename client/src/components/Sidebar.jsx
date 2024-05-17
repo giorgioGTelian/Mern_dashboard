@@ -12,92 +12,16 @@ import {
   useTheme,
 } from "@mui/material";
 import {
-  SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
-  HomeOutlined,
-  ShoppingCartOutlined,
-  Groups2Outlined,
-  ReceiptLongOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  CalendarMonthOutlined,
-  AdminPanelSettingsOutlined,
-  TrendingUpOutlined,
-  PieChartOutlined,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
+import navItems from "./sidebarTools/navItem";
 
 //think about how to use Divider from mui/material
 
-const navItems = [
-  {
-    text: "Dashboard",
-    icon: <HomeOutlined />,
-  },
-  {
-    text: "Gestione didattica",
-    icon: null,
-  },
-  {
-    text: "Anagrafica",
-    icon: null,
-  },
-  {
-    text: "CRM",
-    icon: null,
-  },
-  {
-    text: "Prodotti",
-    icon: <ShoppingCartOutlined />,
-  },
-  {
-    text: "Clienti",
-    icon: <Groups2Outlined />,
-  },
-  {
-    text: "Transazioni",
-    icon: <ReceiptLongOutlined />,
-  },
-  {
-    text: "Rendicontazione",
-    icon: null,
-  },
-  {
-    text: "Overview",
-    icon: <PointOfSaleOutlined />,
-  },
-  {
-    text: "Giornaliero",
-    icon: <TodayOutlined />,
-  },
-  {
-    text: "Mensile",
-    icon: <CalendarMonthOutlined />,
-  },
-  {
-    text: "Analisi contabilità",
-    icon: <PieChartOutlined />,
-  },
-  {
-    text: "Impostazioni Gestionale",
-    icon: null,
-  },
-  {
-    text: "Ammistrazione",
-    icon: <AdminPanelSettingsOutlined />,
-  },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
-  {
-    text: "Impostazioni generali",
-    icon: <SettingsOutlined />,
-  },
-];
 
 const Sidebar = ({
   drawerWidth,
