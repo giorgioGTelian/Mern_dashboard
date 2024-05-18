@@ -17,8 +17,8 @@ function Copyright(props) {
 return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-            Your Website
+        <Link color="inherit" href="https://giorgiogt.net">
+        fatto da giorgio e luna
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}
@@ -56,7 +56,7 @@ return (
                 <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-                Sign in
+                Scolastico v1.0
             </Typography>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                 <TextField
@@ -64,7 +64,7 @@ return (
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -81,7 +81,7 @@ return (
                 />
                 <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Ricordami"
                 />
                 <Button
                 type="submit"
@@ -90,17 +90,17 @@ return (
                 sx={{ mt: 3, mb: 2 }}
                 component={Link} to="/dashboard"
                 >
-                Sign In
+                Entra
                 </Button>
                 <Grid container>
                 <Grid item xs>
                     <Link href="#" variant="body2">
-                    Forgot password?
+                    Dimenticata password?
                     </Link>
                 </Grid>
                 <Grid item>
-                    <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    <Link href="/registrati" variant="body2">
+                    {"registrati"}
                     </Link>
                 </Grid>
                 </Grid>

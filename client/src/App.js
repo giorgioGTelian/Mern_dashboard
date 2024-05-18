@@ -9,6 +9,8 @@ import Layout from "./pages/layout";
 import Dashboard from "pages/dashboard";
 import Profile from "pages/profile";
 import SignIn from "pages/signin/signin";
+import SignUp from "pages/signup/signup";
+
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -28,8 +30,8 @@ function App() {
               <Route path="*" element={<Navigate to="/404" />} />
               <Route path="/profilo" element={<Profile />} />
             </Route>
+            <Route path="/registrati" element={<SignUp />} />
           </Routes>
-          <h1>App testing</h1>
         </ThemeProvider> 
       </BrowserRouter>
     </div>

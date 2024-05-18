@@ -56,7 +56,7 @@ return (
             margin="normal"
         />
         <Button type="submit" variant="contained" color="primary">
-            Save
+            Salva
         </Button>
         </form>
 );
