@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Alert } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
 import { useGetUserQuery } from 'state/api';
 import { useSelector } from 'react-redux';
+
 
 const Profile = () => {
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
+const [showAlert, setShowAlert] = useState(false);
 const userId = useSelector((state) => state?.global.userId);
 const { data } = useGetUserQuery(userId); 
 const user = data || {};
@@ -27,6 +30,7 @@ const handlePasswordChange = (event) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
+    setShowAlert(true);
     // Add your logic here to update the user's profile
     console.log('Profile updated:', { name, email, password });
 };
@@ -58,6 +62,11 @@ return (
         <Button type="submit" variant="contained" color="primary">
             Salva
         </Button>
+        {showAlert && (
+                <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+                    Profilo modificato con successo
+                </Alert>
+            )}
         </form>
 );
 };
