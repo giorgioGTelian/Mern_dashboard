@@ -21,8 +21,8 @@ function App() {
             <Route element={<Layout />} >
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
             </Route>
-            <Route path="/about" element={<About />} />
           </Routes>
           <h1>App testing</h1>
         </ThemeProvider> 

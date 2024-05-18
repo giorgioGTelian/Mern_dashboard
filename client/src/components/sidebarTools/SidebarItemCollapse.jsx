@@ -6,19 +6,19 @@ import SidebarItem from "./SidebarItem";
 import { useSelector } from "react-redux";
 import { themeSettings } from "theme";
 
-const SidebarItemCollapse = ({ item }) => {
+const SidebarItemCollapse = ({ text }) => {
 const [open, setOpen] = useState(false);
 
-const appState = useSelector((state) => state.appState.appState);
+const appState = useSelector((state) => state.appState && state.appState.appState);
 
 useEffect(() => {
-    if (appState.includes(item.state)) {
-    setOpen(true);
+    if (appState && typeof appState.includes === 'function' && appState.includes(text)) {
+        setOpen(true);
     }
-}, [appState, item]);
+}, [appState, text]);
 
 return (
-    item.sidebarProps ? (
+    text && text.sidebarProps ? (
         <>
             <ListItemButton
             onClick={() => setOpen(!open)}
@@ -33,13 +33,13 @@ return (
             <ListItemIcon sx={{
                 color: themeSettings("light").palette.background.alt
             }}>
-                {item.sidebarProps.icon && item.sidebarProps.icon}
+                {text.sidebarProps.icon && text.sidebarProps.icon}
             </ListItemIcon>
             <ListItemText
                 disableTypography
                 primary={
                 <Typography>
-                    {item.sidebarProps.displayText}
+                    {text.sidebarProps.displayText}
                 </Typography>
                 }
             />
@@ -47,7 +47,7 @@ return (
             </ListItemButton>
             <Collapse in={open} timeout="auto">
             <List>
-                {item.child?.map((route, index) => (
+                {text.child?.map((route, index) => (
                 route.sidebarProps ? (
                     route.child ? (
                     <SidebarItemCollapse item={route} key={index} />

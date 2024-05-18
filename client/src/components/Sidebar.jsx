@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
 import navItems from "./sidebarTools/navItem";
+import SidebarItemCollapse from "./sidebarTools/SidebarItemCollapse";
 
 //think about how to use Divider from mui/material
 
@@ -76,9 +77,9 @@ const Sidebar = ({
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "1rem 0 1rem 3rem" }}>
+                    <SidebarItemCollapse key={text} sx={{ m: "1rem 0 1rem 3rem" }}>
                       {text}
-                    </Typography>
+                    </SidebarItemCollapse>
                   );
                 }
                 const lcText = text.toLowerCase();

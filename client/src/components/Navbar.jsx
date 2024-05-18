@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import {
   LightModeOutlined,
   DarkModeOutlined,
@@ -6,6 +7,7 @@ import {
   Search,
   SettingsOutlined,
   ArrowDropDownOutlined,
+  AlbumOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "./FlexBetween";
 import { useDispatch } from "react-redux";
@@ -145,6 +147,12 @@ return (
                     <Settings fontSize="small" />
                 </ListItemIcon>
                 Impostazioni
+                </MenuItem>
+                <MenuItem component={Link} to="/about">
+                <ListItemIcon>
+                    <AlbumOutlined fontSize="small" />
+                </ListItemIcon> 
+                About
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                 <ListItemIcon>
