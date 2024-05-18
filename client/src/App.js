@@ -7,6 +7,8 @@ import { themeSettings } from "theme";
 import About from "./pages/about";
 import Layout from "./pages/layout";
 import Dashboard from "pages/dashboard";
+import Profile from "pages/profile";
+import SignIn from "pages/signin/signin";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -18,11 +20,13 @@ function App() {
           <CssBaseline />
           <Routes >
             {/* Add all of you routes here */}
+            <Route path="/" element={<SignIn />} />
             <Route element={<Layout />} >
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/" element={<Navigate to="/dashboard" />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<Navigate to="/404" />} />
+              <Route path="/profilo" element={<Profile />} />
             </Route>
           </Routes>
           <h1>App testing</h1>

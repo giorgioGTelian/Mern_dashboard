@@ -38,7 +38,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
     const isOpen = Boolean(anchorEl);
     const handleClick = (event) => setAnchorEl(event.currentTarget);
     const handleClose = () => setAnchorEl(null);
-
+    
 return (
     <AppBar
     sx={{
@@ -85,7 +85,9 @@ return (
             sx={{
                 justifyContent: "space-between",
                 alignItems: "center",
-                textTransform: "none"
+                textTransform: "none",
+                color: theme.palette.secondary[100],
+                gap: "0.5rem",
             }}
             >
             <Box textAlign="left">
@@ -101,7 +103,7 @@ return (
                 >
                 </Typography>
             </Box>
-            <Avatar src={profileImage} sx={{ color: theme.palette.secondary[300] }} />
+            <Avatar src={profileImage} /> {user.name} 
             <ArrowDropDownOutlined
                 sx={{ color: theme.palette.secondary[300] }}
             />
@@ -128,10 +130,10 @@ return (
             }}
             transformOrigin={{ horizontal: 'right', vertical: 'top' }}
             >
-            <MenuItem onClick={handleClose}>
-                <Avatar src={profileImage} /> Profilo
+            <MenuItem component={Link} to="/profilo">
+                <Avatar src={profileImage} /> {user.name}
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem component={Link} to="/aggiungi_account">
                 <Avatar /> account secondario
                 </MenuItem>
                 <Divider />
@@ -151,9 +153,9 @@ return (
                 <ListItemIcon>
                     <AlbumOutlined fontSize="small" />
                 </ListItemIcon> 
-                About
+                Informazione Applicazione
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleClose}> {/* Logout TODO */}
                 <ListItemIcon>
                     <Logout fontSize="small" />
                 </ListItemIcon>
