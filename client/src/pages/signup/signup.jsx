@@ -11,11 +11,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme } from '@mui/material/styles';
-import { themeSettings } from 'theme';
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
 return (
@@ -31,12 +27,11 @@ return (
 }
 
 
-
+const defaultTheme = createTheme();
 
 export default function SignUp() {
 
-const mode = useSelector((state) => state.global.mode);
-const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]); // Get the them
+
 const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -47,7 +42,7 @@ const handleSubmit = (event) => {
 };
 
 return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
             <CssBaseline />
             <Box
