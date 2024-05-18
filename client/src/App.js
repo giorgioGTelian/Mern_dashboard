@@ -22,6 +22,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
+              <Route path="*" element={<Navigate to="/404" />} />
             </Route>
           </Routes>
           <h1>App testing</h1>

@@ -46,7 +46,7 @@ const navItems = [
         path: "/crm",
     },
     {
-        text: "Prodotti",
+         text: "Prodotti",
         icon: <ShoppingCartOutlined />,
         path: "/prodotti",
     },
@@ -104,7 +104,7 @@ const navItems = [
         text: "Impostazioni generali",
         icon: <SettingsOutlined />,
         path: "/impostazioni-generali",
-    },
+    }, 
 ];
 
 export default navItems;

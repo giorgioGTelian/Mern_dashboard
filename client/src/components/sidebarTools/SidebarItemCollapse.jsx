@@ -4,42 +4,41 @@ import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import SidebarItem from "./SidebarItem";
 import { useSelector } from "react-redux";
-import { themeSettings } from "theme";
 
-const SidebarItemCollapse = ({ text }) => {
-const [open, setOpen] = useState(false);
+const SidebarItemCollapse = ({ item }) => {
+    const [open, setOpen] = useState(false);
 
-const appState = useSelector((state) => state.appState && state.appState.appState);
+    const appState = useSelector((state) => state.global.appState);
 
-useEffect(() => {
-    if (appState && typeof appState.includes === 'function' && appState.includes(text)) {
+    useEffect(() => {
+        if (appState.includes(item.state)) {
         setOpen(true);
-    }
-}, [appState, text]);
+        }
+    }, [appState, item]);
 
-return (
-    text && text.sidebarProps ? (
+    return (
+        item.sidebarProps ? (
         <>
             <ListItemButton
             onClick={() => setOpen(!open)}
             sx={{
                 "&: hover": {
-                backgroundColor: themeSettings("light").palette.background.alt
+                backgroundColor: "rgba(0, 0, 0, 0.04)",
                 },
                 paddingY: "12px",
                 paddingX: "24px"
             }}
             >
             <ListItemIcon sx={{
-                color: themeSettings("light").palette.background.alt
+                color: "inherit",
             }}>
-                {text.sidebarProps.icon && text.sidebarProps.icon}
+                {item.sidebarProps.icon && item.sidebarProps.icon}
             </ListItemIcon>
             <ListItemText
                 disableTypography
                 primary={
                 <Typography>
-                    {text.sidebarProps.displayText}
+                    {item.sidebarProps.displayText}
                 </Typography>
                 }
             />
@@ -47,7 +46,7 @@ return (
             </ListItemButton>
             <Collapse in={open} timeout="auto">
             <List>
-                {text.child?.map((route, index) => (
+                {item.child?.map((route, index) => (
                 route.sidebarProps ? (
                     route.child ? (
                     <SidebarItemCollapse item={route} key={index} />
