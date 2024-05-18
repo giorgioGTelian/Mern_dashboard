@@ -12,6 +12,8 @@ a dashboard using mern stack
 - redux 
 - mui
 - nivo
+- fullcalendar
+- formik for forms
 
 
 ## to follow the project 
