@@ -6,101 +6,173 @@ import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
 import ComponentPageLayout from "../pages/component/ComponentPageLayout"; */
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
+import {
+    AdminPanelSettingsOutlined,
+    AppsOutlined,
+    DashboardOutlined,
+    ArticleOutlined,
+    FormatListBulletedOutlined,
+} from "@mui/icons-material";
 
 
 
 const appRoutes = [
-  {
-    index: true,
-    element: <HomePage />,
-    state: "home"
-  },
   {
     path: "/dashboard",
     element: <DashboardPageLayout />,
     state: "dashboard",
     sidebarProps: {
       displayText: "Dashboard",
-      icon: <DashboardOutlinedIcon />
+      icon: <DashboardOutlined />
     },
-    child: [
-      {
-        index: true,
-        //element: <DashboardIndex />,
-        state: "dashboard.index"
-      },
-      {
-        path: "/dashboard/default",
-        element: <HomePage />,
-        state: "dashboard.default",
-        sidebarProps: {
-          displayText: "about"
-        },
-      },
-      {
-        path: "/dashboard/analytics",
-        //element: <AnalyticsPage />,
-        state: "dashboard.analytics",
-        sidebarProps: {
-          displayText: "Analytic"
-        }
-      },
-      {
-        path: "/dashboard/saas",
-        //element: <SaasPage />,
-        state: "dashboard.saas",
-        sidebarProps: {
-          displayText: "Saas"
-        }
-      }
-    ]
   },
   {
     state: "component",
     sidebarProps: {
-      displayText: "testing",
-      icon: <AppsOutlinedIcon />
+      displayText: "Didattica",
+      icon: <AppsOutlined />
     },
     child: [
       {
-        path: "/about",
+        path: "/iscrizioni",
        element: <HomePage />,
         state: "component.alert",
         sidebarProps: {
-          displayText: "about"
+          displayText: "Iscrizioni"
         },
       },
       {
-        path: "/component/button",
+        path: "/lezioni",
        // element: <ButtonPage />,
         state: "component.button",
         sidebarProps: {
-          displayText: "Button"
+          displayText: "lezioni"
+        }
+      },
+      {
+        path: "/calendario",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "calendario"
+        }
+      },
+      {
+        path: "/gestione_scolastica",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "gestione scolastica"
         }
       }
     ]
   },
   {
-    path: "/documentation",
-   // element: <DocumentationPage />,
     state: "documentation",
     sidebarProps: {
-      displayText: "Documentation",
-      icon: <ArticleOutlinedIcon />
-    }
+      displayText: "Anagrafica",
+      icon: <ArticleOutlined />
+    },
+    child: [
+      {
+        path: "/docenti",
+       element: <HomePage />,
+        state: "component.alert",
+        sidebarProps: {
+          displayText: "Docenti"
+        },
+      },
+      {
+        path: "/studenti",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "Studenti"
+        }
+      },
+      {
+        path: "/genitori",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "Genitori"
+        }
+      },
+      {
+        path: "/materie",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "Materie"
+        }
+      },
+      {
+        path: "/aule",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "Aule"
+        }
+      },
+      {
+        path: "/gestione_anagrafica",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "gestione anagrafica"
+        }
+      }
+    ]
   },
   {
-    path: "/changelog",
-   // element: <ChangelogPage />,
     state: "changelog",
     sidebarProps: {
-      displayText: "Changelog",
-      icon: <FormatListBulletedOutlinedIcon />
-    }
+      displayText: "CRM",
+      icon: <FormatListBulletedOutlined />
+    },
+    child: [
+      {
+        path: "/clienti",
+       element: <HomePage />,
+        state: "component.alert",
+        sidebarProps: {
+          displayText: "Clienti"
+        },
+      },
+      {
+        path: "/transazioni",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "transazioni"
+        }
+      }
+    ]
+  },
+  {
+    state: "analytics",
+    sidebarProps: {
+      displayText: "Amministrazione",
+      icon: <AdminPanelSettingsOutlined />
+    },
+    child: [
+      {
+        path: "/impostazioni_generali",
+       element: <HomePage />,
+        state: "component.alert",
+        sidebarProps: {
+          displayText: "Impostazioni generali"
+        },
+      },
+      {
+        path: "/statistiche",
+       // element: <ButtonPage />,
+        state: "component.button",
+        sidebarProps: {
+          displayText: "Statistiche"
+        }
+      }
+    ]
   }
 ];
 
