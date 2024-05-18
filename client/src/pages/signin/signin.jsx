@@ -9,7 +9,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 
@@ -41,12 +41,28 @@ const handleSubmit = (event) => {
 };
 
 return (
-        <ThemeProvider theme={defaultTheme}>
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
+    <ThemeProvider theme={defaultTheme}>
+    <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+            item
+            xs={false}
+            sm={4}
+            md={7}
+            sx={{
+            backgroundImage: 'url(https://i.imgur.com/Ie05jNs.png)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+                t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            
+            backgroundPosition: 'center',
+            }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
             <Box
             sx={{
-                marginTop: 8,
+                my: 8,
+                mx: 4,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -56,15 +72,15 @@ return (
                 <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-                Scolastico v1.0
+                Scolastico v1
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                 <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email"
+                label="Email Address"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -81,7 +97,7 @@ return (
                 />
                 <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Ricordami"
+                label="Remember me"
                 />
                 <Button
                 type="submit"
@@ -95,19 +111,20 @@ return (
                 <Grid container>
                 <Grid item xs>
                     <Link href="#" variant="body2">
-                    Dimenticata password?
+                    Dimenticata Password?
                     </Link>
                 </Grid>
                 <Grid item>
                     <Link href="/registrati" variant="body2">
-                    {"registrati"}
+                    {"Registrati"}
                     </Link>
                 </Grid>
                 </Grid>
+                <Copyright sx={{ mt: 5 }} />
             </Box>
             </Box>
-            <Copyright sx={{ mt: 8, mb: 4 }} />
-        </Container>
-        </ThemeProvider>
+        </Grid>
+        </Grid>
+    </ThemeProvider>
     );
 }
