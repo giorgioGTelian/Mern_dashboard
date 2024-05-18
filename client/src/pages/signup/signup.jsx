@@ -68,7 +68,7 @@ return (
                     required
                     fullWidth
                     id="firstName"
-                    label="First Name"
+                    label="Nome"
                     autoFocus
                     />
                 </Grid>
@@ -77,7 +77,7 @@ return (
                     required
                     fullWidth
                     id="Cognome"
-                    label="Last Name"
+                    label="Cognome"
                     name="lastName"
                     autoComplete="family-name"
                     />

@@ -17,7 +17,7 @@ function Copyright(props) {
 return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" href="https://giorgiogt.net">
+        <Link color="inherit" component={Link} to="https://giorgiogt.net" >
         fatto da giorgio e luna
         </Link>{' '}
         {new Date().getFullYear()}
@@ -80,7 +80,7 @@ return (
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Indirizzo Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -97,7 +97,7 @@ return (
                 />
                 <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                label="Ricordami"
                 />
                 <Button
                 type="submit"
@@ -115,7 +115,7 @@ return (
                     </Link>
                 </Grid>
                 <Grid item>
-                    <Link href="/registrati" variant="body2">
+                    <Link component={Link} to="/registrati" variant="body2">
                     {"Registrati"}
                     </Link>
                 </Grid>
