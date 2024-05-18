@@ -10,6 +10,7 @@ import Dashboard from "pages/dashboard";
 import Profile from "pages/profile";
 import SignIn from "pages/signin/signin";
 import SignUp from "pages/signup/signup";
+import Calendar from "pages/calendar/calendar";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="*" element={<Navigate to="/404" />} />
               <Route path="/profilo" element={<Profile />} />
+              <Route path="/calendario" element={<Calendar />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
           </Routes>

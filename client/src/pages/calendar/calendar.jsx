@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
+import { formatDate } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -10,14 +11,11 @@ import {
     ListItem,
     ListItemText,
     Typography,
-    useTheme,
 } from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
+
 
 const Calendar = () => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+
     const [currentEvents, setCurrentEvents] = useState([]);
 
     const handleDateClick = (selected) => {
@@ -48,13 +46,12 @@ const Calendar = () => {
 
     return (
         <Box m="20px">
-        <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
+        <h1>Calendar</h1>
 
         <Box display="flex" justifyContent="space-between">
             {/* CALENDAR SIDEBAR */}
             <Box
             flex="1 1 20%"
-            backgroundColor={colors.primary[400]}
             p="15px"
             borderRadius="4px"
             >
@@ -64,7 +61,6 @@ const Calendar = () => {
                 <ListItem
                     key={event.id}
                     sx={{
-                    backgroundColor: colors.greenAccent[500],
                     margin: "10px 0",
                     borderRadius: "2px",
                     }}
