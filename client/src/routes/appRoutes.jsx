@@ -14,166 +14,164 @@ import {
     FormatListBulletedOutlined,
 } from "@mui/icons-material";
 
-
-
 const appRoutes = [
-  {
-    path: "/dashboard",
-    element: <DashboardPageLayout />,
-    state: "dashboard",
-    sidebarProps: {
-      displayText: "Dashboard",
-      icon: <DashboardOutlined />
-    },
-  },
-  {
-    state: "component",
-    sidebarProps: {
-      displayText: "Didattica",
-      icon: <AppsOutlined />
-    },
-    child: [
-      {
-        path: "/iscrizioni",
-       element: <HomePage />,
-        state: "component.alert",
+    {
+        path: "/dashboard",
+        element: <DashboardPageLayout />,
+        state: "dashboard",
         sidebarProps: {
-          displayText: "Iscrizioni"
+        displayText: "Dashboard",
+        icon: <DashboardOutlined />,
         },
-      },
-      {
-        path: "/lezioni",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "lezioni"
-        }
-      },
-      {
-        path: "/calendario",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "calendario"
-        }
-      },
-      {
-        path: "/gestione_scolastica",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "gestione scolastica"
-        }
-      }
-    ]
-  },
-  {
-    state: "documentation",
-    sidebarProps: {
-      displayText: "Anagrafica",
-      icon: <ArticleOutlined />
     },
-    child: [
-      {
-        path: "/docenti",
-       element: <HomePage />,
-        state: "component.alert",
+    {
+        state: "component",
         sidebarProps: {
-          displayText: "Docenti"
+        displayText: "Didattica",
+        icon: <AppsOutlined />,
         },
-      },
-      {
-        path: "/studenti",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Studenti"
-        }
-      },
-      {
-        path: "/genitori",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Genitori"
-        }
-      },
-      {
-        path: "/materie",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Materie"
-        }
-      },
-      {
-        path: "/aule",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Aule"
-        }
-      },
-      {
-        path: "/gestione_anagrafica",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "gestione anagrafica"
-        }
-      }
-    ]
-  },
-  {
-    state: "changelog",
-    sidebarProps: {
-      displayText: "CRM",
-      icon: <FormatListBulletedOutlined />
+        child: [
+        {
+            path: "/iscrizioni",
+            element: <HomePage />,
+            state: "component.alert",
+            sidebarProps: {
+            displayText: "Iscrizioni",
+            },
+        },
+        {
+            path: "/lezioni",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "lezioni",
+            },
+        },
+        {
+            path: "/calendario",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "calendario",
+            },
+        },
+        {
+            path: "/gestione_scolastica",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "gestione scolastica",
+            },
+        },
+        ],
     },
-    child: [
-      {
-        path: "/clienti",
-       element: <HomePage />,
-        state: "component.alert",
+    {
+        state: "documentation",
         sidebarProps: {
-          displayText: "Clienti"
+        displayText: "Anagrafica",
+        icon: <ArticleOutlined />,
         },
-      },
-      {
-        path: "/transazioni",
-       // element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "transazioni"
-        }
-      }
-    ]
-  },
-  {
-    state: "analytics",
-    sidebarProps: {
-      displayText: "Amministrazione",
-      icon: <AdminPanelSettingsOutlined />
+        child: [
+        {
+            path: "/docenti",
+            element: <HomePage />,
+            state: "component.alert",
+            sidebarProps: {
+            displayText: "Docenti",
+            },
+        },
+        {
+            path: "/studenti",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "Studenti",
+            },
+        },
+        {
+            path: "/genitori",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "Genitori",
+            },
+        },
+        {
+            path: "/materie",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "Materie",
+            },
+        },
+        {
+            path: "/aule",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "Aule",
+            },
+        },
+        {
+            path: "/gestione_anagrafica",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "gestione anagrafica",
+            },
+        },
+        ],
     },
-    child: [
-      {
-        path: "/impostazioni_generali",
-       element: <HomePage />,
-        state: "component.alert",
+    {
+        state: "changelog",
         sidebarProps: {
-          displayText: "Impostazioni generali"
+        displayText: "CRM",
+        icon: <FormatListBulletedOutlined />,
         },
-      },
-      {
-        path: "/statistiche",
-       // element: <ButtonPage />,
-        state: "component.button",
+        child: [
+        {
+            path: "/clienti",
+            element: <HomePage />,
+            state: "component.alert",
+            sidebarProps: {
+            displayText: "Clienti",
+            },
+        },
+        {
+            path: "/transazioni",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "transazioni",
+            },
+        },
+        ],
+    },
+    {
+        state: "analytics",
         sidebarProps: {
-          displayText: "Statistiche"
-        }
-      }
-    ]
-  }
+        displayText: "Amministrazione",
+        icon: <AdminPanelSettingsOutlined />,
+        },
+        child: [
+        {
+            path: "/impostazioni_generali",
+            element: <HomePage />,
+            state: "component.alert",
+            sidebarProps: {
+            displayText: "Impostazioni generali",
+            },
+        },
+        {
+            path: "/statistiche",
+            // element: <ButtonPage />,
+            state: "component.button",
+            sidebarProps: {
+            displayText: "Statistiche",
+            },
+        },
+        ],
+    },
 ];
 
 export default appRoutes;
