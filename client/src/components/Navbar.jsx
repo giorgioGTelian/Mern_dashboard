@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import {
-  LightModeOutlined,
-  DarkModeOutlined,
-  Menu as MenuIcon,
-  Search,
-  SettingsOutlined,
-  ArrowDropDownOutlined,
-  AlbumOutlined,
+    LightModeOutlined,
+    DarkModeOutlined,
+    Menu as MenuIcon,
+    Search,
+    SettingsOutlined,
+    ArrowDropDownOutlined,
+    AlbumOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "./FlexBetween";
 import { useDispatch } from "react-redux";
@@ -42,7 +42,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 return (
     <AppBar
     sx={{
-        position: "static",
+        position: "static !important",
         background: "none",
         boxShadow: "none",
     }}
@@ -79,15 +79,13 @@ return (
             <SettingsOutlined sx={{ fontSize: "25px" }} />
         </IconButton>
 
-        <FlexBetween>
+        <FlexBetween >
             <Button
             onClick={handleClick}
             sx={{
-                display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                textTransform: "none",
-                gap: "1rem",
+                textTransform: "none"
             }}
             >
             <Box textAlign="left">
@@ -103,8 +101,9 @@ return (
                 >
                 </Typography>
             </Box>
+            <Avatar src={profileImage} sx={{ color: theme.palette.secondary[300] }} />
             <ArrowDropDownOutlined
-                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                sx={{ color: theme.palette.secondary[300] }}
             />
             </Button>
             <Menu
