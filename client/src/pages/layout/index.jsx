@@ -7,7 +7,7 @@ import { useGetUserQuery } from "state/api";
 import { useSelector } from "react-redux";
 
 const Layout = () => {
-const isNonMobile = useMediaQuery("(min-width: 600px)");
+const isNonMobile = useMediaQuery("(min-width: 200px)");
 const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 // Define the width of the sidebar based on whether it's open and the screen size
 const drawerWidth = isSidebarOpen ? (isNonMobile ? 240 : 56) : 0;
