@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ActiveLastBreadcrumb from '../../components/BreadCrumbs';
 import { version } from 'react';
 
+
 //create an about page of the appliction version of node react and js
 const about = () => {
     return (
@@ -12,6 +13,7 @@ const about = () => {
         <ActiveLastBreadcrumb />
         <br />
         <h1>About</h1>
+        <p>Application version 1.0 </p>
         <p>React Version: {version}</p>
         <Link to="/">Go back to the homepage</Link>
         <br />
