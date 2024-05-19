@@ -17,7 +17,7 @@ const Profile = () => {
 
   return (
     <Box m="20px">
-        <h2><strong>Modifica profilo</strong></h2>
+        <h2><strong>Modifica profilo di {user.name}</strong></h2>
 
         <Formik
             onSubmit={handleFormSubmit}
