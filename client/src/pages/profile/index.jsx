@@ -1,4 +1,4 @@
-import { Box, Button, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, Divider } from "@mui/material";
+import { Box, Button, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, Divider, FormHelperText } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -41,19 +41,21 @@ const Profile = () => {
                     "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
                 }}
                 >
-                <FormControl sx={{ m: 1 }}>
-                    <InputLabel htmlFor="outlined-adornment-amount">ID e ruolo</InputLabel>
-                    <OutlinedInput
-                    id="outlined-adornment-amount"
-                    startAdornment={<InputAdornment position="start">{user._id}</InputAdornment>}
-                    label="Amount"
-                />
-                <br/>
-                    <OutlinedInput
+                <FormControl sx={{ m: 1 }} variant="outlined">
+                <OutlinedInput
                     id="outlined-adornment-amount"
                     startAdornment={<InputAdornment position="start">{user.role}</InputAdornment>}
-                    label="Amount"
+                    aria-describedby="outlined-amount-helper-text"
+                    readOnly
                 />
+                <FormHelperText id="outlined-weight-helper-text">Role</FormHelperText>
+                <OutlinedInput
+                    id="outlined-adornment-weight"
+                    startAdornment={<InputAdornment position="start">{user._id}</InputAdornment>}
+                    aria-describedby="outlined-weight-helper-text"
+                    readOnly
+                />
+                <FormHelperText id="outlined-weight-helper-text">ID</FormHelperText>
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }}>
                 <h4><strong>Nome e cognome</strong></h4>
@@ -108,7 +110,7 @@ const Profile = () => {
                     fullWidth
                     variant="filled"
                     type="text"
-                    label={"Indirizzo: " +user.city + " " + user.country}
+                    label={user.city + " " + user.country}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.address1}
@@ -116,12 +118,15 @@ const Profile = () => {
                     error={!!touched.address1 && !!errors.address1}
                     helperText={touched.address1 && errors.address1}
                     sx={{ gridColumn: "span 4" }}
+                    InputProps={{
+                        startAdornment: <InputAdornment position="start">Indirizzo di residenza</InputAdornment>,
+                    }}
                 />
                 <TextField
                     fullWidth
                     variant="filled"
                     type="text"
-                    label={"Note: " + user.occupation}
+                    label={user.occupation}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     value={values.address2}
@@ -129,6 +134,9 @@ const Profile = () => {
                     error={!!touched.address2 && !!errors.address2}
                     helperText={touched.address2 && errors.address2}
                     sx={{ gridColumn: "span 4" }}
+                    InputProps={{
+                        startAdornment: <InputAdornment position="start">Note aggiuntive</InputAdornment>,
+                    }}
                 />
                 
                 </Box>
@@ -148,9 +156,9 @@ const phoneRegExp =
 /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 const checkoutSchema = yup.object().shape({
-    firstName: yup.string().required("Richiesto Nome"),
+    firstName: yup.string().required("Nome richiesto"),
     lastName: yup.string(),
-    email: yup.string().email("email invalida").required("Richiesto Email"),
+    email: yup.string().email("email invalida").required("Email richiesta"),
     contact: yup
         .string()
         .matches(phoneRegExp, "Numero di telefono non valido"),
