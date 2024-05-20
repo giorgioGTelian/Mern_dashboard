@@ -11,6 +11,7 @@ import Profile from "pages/profile";
 import SignIn from "pages/signin/signin";
 import SignUp from "pages/signup/signup";
 import Calendar from "pages/calendar/calendar";
+import AdministratorOverview from "pages/administrators_tools/admin_overview/administratorOverview";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Route path="*" element={<Navigate to="/404" />} />
               <Route path="/profilo" element={<Profile />} />
               <Route path="/calendario" element={<Calendar />} />
+              <Route path="/statistiche" element={<AdministratorOverview />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
           </Routes>
