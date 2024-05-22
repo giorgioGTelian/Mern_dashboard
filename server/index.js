@@ -42,6 +42,7 @@ import apiV1Routes from './routes/apiV1.js';
 /* data import */ 
 import User from './models/User.js';
 import { dataUser } from './data/index.js';
+import { getAllUsers } from './controllers/general.js';
 
 
 /* configuration */
@@ -60,6 +61,7 @@ app.use(cors());
 /* routes */
 
 app.use("/general", generalRoutes);  
+
 
 //users and admins
 /*
@@ -115,8 +117,11 @@ app.use((error, req, res, next) => {
 /* database connection */
 
 mongoose.connect(process.env.MONGO_URL)
-.then(() => {
+.then(async () => {
+    console.log('Connected to MongoDB');
+
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
 
     /* ONLY ADD DATA ONE TIME - this is the initial data injection from data/index.js */
     // AffiliateStat.insertMany(dataAffiliateStat);
