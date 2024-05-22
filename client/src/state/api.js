@@ -5,6 +5,7 @@ export const api = createApi({
     reducerPath: "adminApi",
     tagTypes: [
         "User",
+        "Users",
         "Products",
         "Customers",
         "Transactions",
@@ -21,8 +22,8 @@ export const api = createApi({
         }),
         //get all the users
         getAllUsers: build.query({
-        query: () => "general/user",
-        providesTags: ["User"],
+        query: () => "general/users",
+        providesTags: ["Users"],
         }),
         getProducts: build.query({
         query: () => "client/products",
