@@ -29,6 +29,7 @@ import {
     ListItemIcon,
 } from "@mui/material";
 import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import NavBarAllUser from "./navbarTools/NavBarAllUser";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
     const dispatch = useDispatch();
@@ -142,6 +143,9 @@ return (
                     <PersonAdd fontSize="small" />
                 </ListItemIcon>
                 aggiungi un altro account
+                </MenuItem>
+                <MenuItem>
+                <NavBarAllUser />
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
                 <ListItemIcon>

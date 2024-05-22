@@ -3,7 +3,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
-import { useGetUserQuery } from "state/api";
+import { useGetUserQuery, useGetAllUsersQuery } from "state/api";
 import { useSelector } from "react-redux";
 
 const Layout = () => {
@@ -14,6 +14,8 @@ const drawerWidth = isSidebarOpen ? (isNonMobile ? 240 : 56) : 0;
 // Fetch the user data
 const userId = useSelector((state) => state?.global.userId);
 const { data } = useGetUserQuery(userId); 
+// Fetch all the users
+const { data: users } = useGetAllUsersQuery();
 
 
 return (
@@ -24,6 +26,7 @@ return (
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
         user={data || {}}
+        users={users || []}
     />
     <Box flexGrow={1}>
         <Navbar
