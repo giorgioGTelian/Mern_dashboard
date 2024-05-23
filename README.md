@@ -6,6 +6,7 @@ a dashboard using mern stack
 - expressjs
 - mongo with mongoose - mondgoDB
 - cors
+- uuid for automatic uuid geration
 
 ## framework and libraries for frontend
 - react
