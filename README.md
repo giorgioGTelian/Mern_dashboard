@@ -4,7 +4,7 @@ a dashboard using mern stack
 ## framework and libraries for backend
 - nodejs
 - expressjs
-- mongo with mongoose
+- mongo with mongoose - mondgoDB
 - cors
 
 ## framework and libraries for frontend
