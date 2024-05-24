@@ -17484,3 +17484,19 @@ export const dataAffiliateStat = [
       notes: "",
     },
   ];
+
+  export const dataTeachers = [
+    {
+      id: uuidv4(),
+      name: "Teacher 1",
+      subjects: ["math", "english"],
+      students: ["gianni luigi"], 
+    },
+    {
+      id: uuidv4(),
+      name: "Teacher 2",
+      subjects: ["science"],
+      students: ["gianni luigi"],
+    },
+    
+  ];

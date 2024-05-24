@@ -41,8 +41,9 @@ import apiV1Routes from './routes/apiV1.js';
 
 /* data import */ 
 import User from './models/User.js';
-import { dataUser } from './data/index.js';
+import { dataUser, dataStudent } from './data/index.js';
 import { getAllUsers } from './controllers/general.js';
+
 
 
 /* configuration */
@@ -129,6 +130,6 @@ mongoose.connect(process.env.MONGO_URL)
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
-    User.insertMany(dataUser); 
+    //User.insertMany(dataUser); 
 })
 .catch((error) => console.log(`${error} did not connect`));
