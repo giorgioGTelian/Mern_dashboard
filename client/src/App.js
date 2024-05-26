@@ -19,6 +19,7 @@ import Notifications from "./pages/administrators_tools/Account/Notifications/No
 import { Billing } from "./pages/administrators_tools/Account";
 import PasswordResetCover from "./pages/forgot_password/PasswordResetCover";
 import NotFound from "./pages/NotFound";
+import Faq from "./pages/Faq";
 
 
 
@@ -49,6 +50,7 @@ function App() {
             </Route>
             <Route path="/registrati" element={<SignUp />} />
             <Route path="/password-reset" element={<PasswordResetCover />} />
+            <Route path="/FAQs" element={<Faq />} />
           </Routes>
         </ThemeProvider> 
       </BrowserRouter>

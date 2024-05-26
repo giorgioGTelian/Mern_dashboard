@@ -1,11 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-
+import  Footer  from '../layout/Fluid/components/Footer/Footer';
 import Container from 'components/Container';
 import { Form } from './components';
 
 const PasswordResetCover = () => {
   return (
+    <>
       <Box
         sx={{
           width: 1,
@@ -96,6 +97,8 @@ const PasswordResetCover = () => {
           </Box>
         </Container>
       </Box>
+      <Footer />
+      </>
   );
 };
 
