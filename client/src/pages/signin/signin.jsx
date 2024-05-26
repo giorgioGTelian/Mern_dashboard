@@ -110,8 +110,8 @@ return (
                 </Button>
                 <Grid container>
                 <Grid item xs>
-                    <Link href="#" variant="body2">
-                    Dimenticata Password?
+                    <Link component={Link} to="/password-reset" variant="body2">
+                    {"Dimenticata Password?"}
                     </Link>
                 </Grid>
                 <Grid item>

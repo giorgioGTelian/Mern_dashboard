@@ -17,6 +17,7 @@ import  General  from "./pages/administrators_tools/Account/General/General";
 import Security from "./pages/administrators_tools/Account/Security/Security";
 import Notifications from "./pages/administrators_tools/Account/Notifications/Notifications";
 import { Billing } from "./pages/administrators_tools/Account";
+import PasswordResetCover from "./pages/forgot_password/PasswordResetCover";
 
 
 
@@ -46,7 +47,7 @@ function App() {
               <Route path="/account-billing" element={<Billing />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
-
+            <Route path="/password-reset" element={<PasswordResetCover />} />
           </Routes>
         </ThemeProvider> 
       </BrowserRouter>
