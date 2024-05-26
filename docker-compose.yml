@@ -1,0 +1,23 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+      - ./client/app/node_modules
+    environment:
+      - NODE_ENV=development
+  server:
+    build: ./server
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./server:/
+    environment:
+      - NODE_ENV=development

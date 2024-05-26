@@ -1,0 +1,28 @@
+# Dockerfile
+
+# Use an official Node.js runtime as the base image
+FROM node:21.6.1
+
+# Set the working directory in the container to /app
+WORKDIR /
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /node_modules/.bin:$PATH
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+RUN npm install react-scripts@3.4.1 -g --silent
+
+# Install the application dependencies
+RUN npm install
+
+# Copy the rest of the application code to the working directory
+COPY . ./
+
+# Expose port 5000 for the application
+EXPOSE 5001
+
+# Define the command to run the application
+CMD [ "npm", "start" ]
