@@ -7,7 +7,6 @@ const Headline = () => {
     <Box>
       <Typography
         sx={{
-          textTransform: 'uppercase',
           fontWeight: 'medium',
         }}
         gutterBottom

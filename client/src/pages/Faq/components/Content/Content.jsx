@@ -59,32 +59,32 @@ const Content = () => {
     <Box>
       <Box marginBottom={6}>
         <FaqGroupItem
-          title={'Basics'}
+          title={'Domande frequenti'}
           items={[
             {
               title: 'Posso acquistare una licenza?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, puoi acquistare una licenza per ogni prodotto disponibile sul nostro sito web. Dopo aver acquistato il prodotto, riceverai un codice di licenza univoco. Il codice di licenza ti darà il diritto di utilizzare il prodotto in modo continuativo.',
             },
             {
               title: "Qual'è la tua politica di rimborso?",
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Offriamo una garanzia di rimborso entro 7 giorni dall’acquisto. Se non sei soddisfatto del nostro prodotto, ti rimborseremo l’intero importo. Per ulteriori informazioni, ti preghiamo di contattarci.',
             },
             {
-              title: 'Mi dai il prodotto gratis',
+              title: 'Mi dai il prodotto gratis?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, offriamo una versione gratuita per tutti i nostri prodotti. Puoi scaricare il prodotto gratuitamente e utilizzarlo per sempre. Tuttavia, la versione gratuita ha alcune limitazioni rispetto alla versione a pagamento. Le funzionalità premium sono disponibili solo per la versione a pagamento.',
             },
             {
               title: 'Posso cambiare licenza?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, puoi cambiare la tua licenza in qualsiasi momento. Se desideri aggiornare la tua licenza, ti preghiamo di contattarci. Ti aiuteremo a cambiare la tua licenza senza alcun problema.',
             },
             {
               title: 'il Prodotto è a iscrizione?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'No, il nostro prodotto non è a iscrizione. Una volta acquistato il prodotto, puoi utilizzarlo per sempre. Non è richiesta alcuna iscrizione mensile o annuale. Tuttavia, ti consigliamo di acquistare la nostra licenza per ricevere aggiornamenti e supporto continuativo.',
             },
           ]}
         />
@@ -94,29 +94,29 @@ const Content = () => {
           title={'Account e impostazioni'}
           items={[
             {
-              title: 'Can I purchase a gift certificate?',
+              title: 'Cosa succede se dimentico la password?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Se dimentichi la tua password, puoi reimpostarla facilmente. Vai alla pagina di accesso e fai clic su "Password dimenticata". Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la tua password. Se incontri problemi, ti preghiamo di contattarci. Ti aiuteremo a recuperare la tua password.',
             },
             {
-              title: 'What is your return policy?',
+              title: 'Quando scade il mio piano attuale?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Puoi controllare la data di scadenza del tuo piano attuale nella tua area account. Vai alla pagina del tuo account e fai clic su "Piani". Qui troverai tutte le informazioni sul tuo piano attuale, inclusa la data di scadenza. Se desideri prolungare il tuo piano, ti preghiamo di contattarci. Ti aiuteremo a prolungare il tuo piano senza alcun problema.',
             },
             {
-              title: 'Do you sell gift cards?',
+              title: "Che differenza c'è tra un account gratuito e uno a pagamento?",
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'La differenza principale tra un account gratuito e uno a pagamento è l’accesso alle funzionalità premium. Con un account gratuito, puoi utilizzare il prodotto gratuitamente, ma con alcune limitazioni. Con un account a pagamento, puoi accedere a tutte le funzionalità premium e ricevere supporto continuativo. Ti consigliamo di acquistare un account a pagamento per ottenere il massimo dal nostro prodotto.',
             },
             {
-              title: 'Can I change plans later on?',
+              title: 'è possibile richiedere una feature nuova per il prodotto?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, puoi richiedere una nuova funzionalità per il nostro prodotto. Se hai delle idee su come migliorare il nostro prodotto, ti preghiamo di contattarci. Saremo lieti di ascoltare le tue proposte e di implementare nuove funzionalità nel nostro prodotto.',
             },
             {
-              title: 'Is this a subscription service?',
+              title: 'Posso esportare i miei dati in un altro formato?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, puoi esportare i tuoi dati in diversi formati, come CSV, XLS o PDF. Vai alla pagina del tuo account e fai clic su "Esporta dati". Qui troverai tutte le opzioni disponibili per esportare i tuoi dati. Se incontri problemi, ti preghiamo di contattarci. Ti aiuteremo a esportare i tuoi dati nel formato desiderato.',
             },
           ]}
         />
@@ -126,29 +126,29 @@ const Content = () => {
           title={'Sicuezza e privacy'}
           items={[
             {
-              title: 'Can I purchase a gift certificate?',
+              title: 'Quali sono i tuoi termini di servizio?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'I nostri termini di servizio sono disponibili sulla nostra pagina di termini e condizioni. Ti consigliamo di leggere attentamente i nostri termini di servizio prima di utilizzare il nostro prodotto. Se hai domande sui nostri termini di servizio, ti preghiamo di contattarci. Ti aiuteremo a chiarire qualsiasi dubbio tu abbia sui nostri termini di servizio.',
             },
             {
-              title: 'What is your return policy?',
+              title: 'Che sicurezza offri per i miei dati personali?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'La sicurezza dei tuoi dati personali è la nostra massima priorità. Utilizziamo le ultime tecnologie di crittografia per proteggere i tuoi dati personali da accessi non autorizzati. Inoltre, rispettiamo rigorosamente le leggi sulla privacy e non condividiamo mai i tuoi dati personali con terzi senza il tuo consenso. Se hai domande sulla sicurezza dei tuoi dati personali, ti preghiamo di contattarci. Ti forniremo tutte le informazioni di cui hai bisogno sulla sicurezza dei tuoi dati personali.',
             },
             {
-              title: 'Do you sell gift cards?',
+              title: 'Cosa succede se vengo hackerato?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Se pensi di essere stato hackerato, ti preghiamo di contattarci immediatamente. Faremo tutto il possibile per proteggere i tuoi dati e ripristinare la sicurezza del tuo account. Se hai domande sulla sicurezza del tuo account, ti preghiamo di contattarci. Ti aiuteremo a risolvere qualsiasi problema di sicurezza che potresti incontrare.',
             },
             {
-              title: 'Can I change plans later on?',
+              title: 'Posso vedere il mio storico di navigazione?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Sì, puoi vedere il tuo storico di navigazione nella tua area account. Vai alla pagina del tuo account e fai clic su "Storico di navigazione". Qui troverai tutte le informazioni sulle pagine che hai visitato e sulle azioni che hai compiuto. Se incontri problemi, ti preghiamo di contattarci. Ti aiuteremo a visualizzare il tuo storico di navigazione.',
             },
             {
-              title: 'Is this a subscription service?',
+              title: 'Come posso cancellare il mio account?',
               subtitle:
-                'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+                'Se desideri cancellare il tuo account, ti preghiamo di contattarci. Faremo tutto il possibile per cancellare il tuo account e proteggere i tuoi dati personali. Se hai domande sulla cancellazione del tuo account, ti preghiamo di contattarci. Ti aiuteremo a cancellare il tuo account senza alcun problema.',
             },
           ]}
         />
