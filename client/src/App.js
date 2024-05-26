@@ -13,6 +13,10 @@ import SignUp from "pages/signup/signup";
 import Calendar from "pages/calendar/calendar";
 import AdministratorOverview from "pages/administrators_tools/admin_overview/administratorOverview";
 import WithTwoColumnsView from "./components/checkoutPages/WithTwoColumns";
+import  General  from "./pages/administrators_tools/Account/General/General";
+import Security from "./pages/administrators_tools/Account/Security/Security";
+import Notifications from "./pages/administrators_tools/Account/Notifications/Notifications";
+import { Billing } from "./pages/administrators_tools/Account";
 
 
 
@@ -36,6 +40,10 @@ function App() {
               <Route path="/calendario" element={<Calendar />} />
               <Route path="/statistiche" element={<AdministratorOverview />} />
               <Route path="/blocks/checkout-pages/with-two-columns" element={<WithTwoColumnsView />} />
+              <Route path="/account-general" element={<General />} />
+              <Route path="/account-security" element={<Security />} />
+              <Route path="/account-notifications" element={<Notifications />} />
+              <Route path="/account-billing" element={<Billing />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
 
