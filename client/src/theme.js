@@ -150,5 +150,46 @@ export const themeSettings = (mode) => {
                 fontSize: 14,
             },
         },
+        zIndex: {
+            appBar: 1200,
+            drawer: 1300,
+        },
+        components: {
+            MuiButton: {
+                styleOverrides: {
+                    root: {
+                        fontWeight: 400,
+                        borderRadius: 5,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                    },
+                    containedSecondary: mode === 'light' ? { color: 'white' } : {},
+                },
+            },
+            MuiInputBase: {
+                styleOverrides: {
+                    root: {
+                        borderRadius: 5,
+                    },
+                },
+            },
+            MuiOutlinedInput: {
+                styleOverrides: {
+                    root: {
+                        borderRadius: 5,
+                    },
+                    input: {
+                        borderRadius: 5,
+                    },
+                },
+            },
+            MuiCard: {
+                styleOverrides: {
+                    root: {
+                        borderRadius: 8,
+                    },
+                },
+            },
+        },
     };
 };

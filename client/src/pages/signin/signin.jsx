@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import { themeSettings } from "theme";
 
 function Copyright(props) {
 return (
@@ -28,7 +29,7 @@ return (
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+const defaultTheme = createTheme(themeSettings("light"));
 
 export default function SignIn() {
 const handleSubmit = (event) => {
