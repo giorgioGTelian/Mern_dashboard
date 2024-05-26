@@ -17500,3 +17500,37 @@ export const dataAffiliateStat = [
     },
     
   ];
+
+  export const dataLessonsPackages = [
+    {
+      id: uuidv4(),
+      name: "lezione singola"
+    },
+    {
+      id: uuidv4(),
+      name: "lezione da 5 ore"
+    },
+    {
+      id: uuidv4(),
+      name: "lezione da 10 ore"
+    },
+    {
+      id: uuidv4(),
+      name: "lezione da 20 ore"
+    },
+  ]
+
+  export const dataLessons = [
+    {
+      id: uuidv4(),
+      name: "Matematica"
+    },
+    {
+      id: uuidv4(),
+      name: "Informatica"
+    },
+    {
+      id: uuidv4(),
+      name: "Inglese"
+    }
+  ]
