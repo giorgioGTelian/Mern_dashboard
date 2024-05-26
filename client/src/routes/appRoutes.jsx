@@ -6,8 +6,7 @@ import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
 import ComponentPageLayout from "../pages/component/ComponentPageLayout"; */
-import WithTwoColumnsView from "../components/checkoutPages/WithTwoColumns";
-import Page from '../pages/administrators_tools/Account/components/Page/Page';
+
 import {
     AdminPanelSettingsOutlined,
     AppsOutlined,
@@ -171,14 +170,6 @@ const appRoutes = [
             sidebarProps: {
             displayText: "Statistiche",
             },
-        },
-        {
-            path: '/blocks/checkout-pages/with-two-columns',
-            renderer: (params = {}) => <WithTwoColumnsView {...params} />,
-        },
-        {
-            path: '/account-billing',
-            renderer: (params = {}) => <Page {...params} />,
         },
         ],
     },

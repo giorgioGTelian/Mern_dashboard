@@ -18,6 +18,7 @@ import Security from "./pages/administrators_tools/Account/Security/Security";
 import Notifications from "./pages/administrators_tools/Account/Notifications/Notifications";
 import { Billing } from "./pages/administrators_tools/Account";
 import PasswordResetCover from "./pages/forgot_password/PasswordResetCover";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -36,7 +37,7 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<About />} />
-              <Route path="*" element={<Navigate to="/404" />} />
+              <Route path="*" element={<NotFound />} />
               <Route path="/profilo" element={<Profile />} />
               <Route path="/calendario" element={<Calendar />} />
               <Route path="/statistiche" element={<AdministratorOverview />} />
