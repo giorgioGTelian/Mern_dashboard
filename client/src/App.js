@@ -12,6 +12,8 @@ import SignIn from "pages/signin/signin";
 import SignUp from "pages/signup/signup";
 import Calendar from "pages/calendar/calendar";
 import AdministratorOverview from "pages/administrators_tools/admin_overview/administratorOverview";
+import WithTwoColumnsView from "./components/checkoutPages/WithTwoColumns";
+
 
 
 function App() {
@@ -33,8 +35,10 @@ function App() {
               <Route path="/profilo" element={<Profile />} />
               <Route path="/calendario" element={<Calendar />} />
               <Route path="/statistiche" element={<AdministratorOverview />} />
+              <Route path="/blocks/checkout-pages/with-two-columns" element={<WithTwoColumnsView />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
+
           </Routes>
         </ThemeProvider> 
       </BrowserRouter>
