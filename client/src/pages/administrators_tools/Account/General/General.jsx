@@ -15,30 +15,30 @@ const validationSchema = yup.object({
   fullName: yup
     .string()
     .trim()
-    .min(2, 'Please enter a valid name')
-    .max(50, 'Please enter a valid name')
-    .required('Please specify your first name'),
+    .min(2, 'Inserisci un nome valido')
+    .max(50, 'Inserisci un nome valido')
+    .required('Per favore specifica un nome valido'),
   email: yup
     .string()
     .trim()
-    .email('Please enter a valid email address')
-    .required('Email is required.'),
+    .email('Inserisci un indirizzo email valido')
+    .required('La tua email è richiesta'),
   bio: yup
     .string()
     .trim()
-    .max(500, 'Should be less than 500 chars'),
+    .max(500, 'meno di 500 caratteri'),
   country: yup
     .string()
     .trim()
     .min(2, 'Please enter a valid name')
     .max(80, 'Please enter a valid name')
-    .required('Please specify your country name'),
+    .required('Scrivi il nome del tuo paese'),
   city: yup
     .string()
     .trim()
     .min(2, 'Please enter a valid name')
     .max(80, 'Please enter a valid name')
-    .required('Please specify your city name'),
+    .required('Scrivi il nome della tua città'),
   address: yup
     .string()
     .required('Please specify your address')
