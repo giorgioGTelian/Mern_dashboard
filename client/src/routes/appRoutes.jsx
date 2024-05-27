@@ -6,6 +6,7 @@ import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
 import ComponentPageLayout from "../pages/component/ComponentPageLayout"; */
+import Page from "../pages/administrators_tools/Account/components/Page/Page";
 
 import {
     AdminPanelSettingsOutlined,
@@ -156,8 +157,8 @@ const appRoutes = [
         },
         child: [
         {
-            path: "/impostazioni_generali",
-            element: <HomePage />,
+            path: "/account-general",
+            element: <Page />,
             state: "component.alert",
             sidebarProps: {
             displayText: "Impostazioni generali",

@@ -1,20 +1,23 @@
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Container } from "@mui/material";
 
 
 const Header = ({ title, subtitle }) => {
 
     return (
-        <Box mb="30px">
-        <Typography
-            variant="h2"
-            fontWeight="strong"
-            sx={{ m: "0 0 5px 0" }}
+        <Box bgcolor={'primary.main'} paddingY={4}>
+        <Container>
+            <Typography
+            variant="h4"
+            fontWeight={700}
+            gutterBottom
+            sx={{ color: 'common.white' }}
         >
             {title}
         </Typography>
-        <Typography variant="h5">
-            {subtitle}
+        <Typography variant="h6" sx={{ color: 'common.white' }}>
+        {subtitle}
         </Typography>
+        </Container>
         </Box>
     );
 };

@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 
@@ -52,14 +52,16 @@ const Security = () => {
             alignItems={{ xs: 'flex-start', md: 'center' }}
           >
             <Typography variant="h6" fontWeight={700}>
-              Change your password
+              Cambia la tua password
             </Typography>
             <Button
               size={'large'}
               variant={'outlined'}
               sx={{ marginTop: { xs: 2, md: 0 } }}
             >
-              Log out
+              <Link component={Link} to="/" variant="body2">
+                    {"Log out"}
+              </Link>
             </Button>
           </Box>
           <Box paddingY={4}>
@@ -73,7 +75,7 @@ const Security = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Current password
+                  Password attuale
                 </Typography>
                 <TextField
                   variant="outlined"
@@ -98,7 +100,7 @@ const Security = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  New password
+                  Nuova Password
                 </Typography>
                 <TextField
                   variant="outlined"
@@ -122,7 +124,7 @@ const Security = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Repeat password
+                  Ripeti password
                 </Typography>
                 <TextField
                   variant="outlined"
@@ -149,7 +151,7 @@ const Security = () => {
                   control={<Switch color="primary" defaultChecked />}
                   label={
                     <Typography variant="subtitle1" fontWeight={700}>
-                      Public Profile
+                      SuperAdminPower
                     </Typography>
                   }
                   labelPlacement="end"
@@ -160,7 +162,7 @@ const Security = () => {
                   control={<Switch color="primary" />}
                   label={
                     <Typography variant="subtitle1" fontWeight={700}>
-                      Expose your email
+                      Tracciami se puoi
                     </Typography>
                   }
                   labelPlacement="end"
@@ -177,18 +179,18 @@ const Security = () => {
                 >
                   <Box marginBottom={{ xs: 1, sm: 0 }}>
                     <Typography variant={'subtitle2'}>
-                      You may also consider to update your{' '}
+                      Considera anche di aggiornare le tue{' '}
                       <Link
                         color={'primary'}
                         href={'/account-notifications'}
                         underline={'none'}
                       >
-                        notification settings.
+                        Impostazioni di notifica
                       </Link>
                     </Typography>
                   </Box>
                   <Button size={'large'} variant={'contained'} type={'submit'}>
-                    Save
+                    Salva
                   </Button>
                 </Box>
               </Grid>

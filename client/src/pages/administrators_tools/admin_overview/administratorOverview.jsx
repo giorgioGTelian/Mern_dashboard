@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, useTheme, Container, Typography } from "@mui/material";
 import { useGetAllUsersQuery } from "state/api";
 import { DataGrid } from "@mui/x-data-grid";
 import Header from "../../../components/Headers";
@@ -51,11 +51,9 @@ const AdministratorOverview = () => {
   ];
 
   return (
-    <Box m="1.5rem 2.5rem">
-      <Header title="Lista utenti" subtitle="lista utenti del sistema" />
+    <Box>
+      <Header title="Lista utenti e statistiche" subtitle="Lista utenti del Sistema" />
       <Box
-        mt="40px"
-        height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -64,12 +62,8 @@ const AdministratorOverview = () => {
             borderBottom: "none",
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: theme.palette.background.alt,
             color: theme.palette.secondary[100],
             borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: theme.palette.primary.light,
           },
           "& .MuiDataGrid-footerContainer": {
             backgroundColor: theme.palette.background.alt,

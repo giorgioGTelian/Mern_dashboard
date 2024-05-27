@@ -31,17 +31,14 @@ const validationSchema = yup.object({
     .string()
     .trim()
     .min(2, 'Please enter a valid name')
-    .max(80, 'Please enter a valid name')
-    .required('Scrivi il nome del tuo paese'),
+    .max(80, 'Please enter a valid name'),
   city: yup
     .string()
     .trim()
     .min(2, 'Please enter a valid name')
-    .max(80, 'Please enter a valid name')
-    .required('Scrivi il nome della tua città'),
+    .max(80, 'Please enter a valid name'),
   address: yup
     .string()
-    .required('Please specify your address')
     .min(2, 'Please enter a valid address')
     .max(200, 'Please enter a valid address'),
 });
@@ -70,14 +67,14 @@ const General = () => {
       <Page>
         <Box>
           <Typography variant="h6" gutterBottom fontWeight={700}>
-            Change your private information
+            Cambia le impostazioni del tuo account
           </Typography>
           <Typography variant={'subtitle2'} color={'text.secondary'}>
-            Please read our{' '}
+            Per favore leggi{' '}
             <Link color={'primary'} href={'/company-terms'} underline={'none'}>
-              terms of use
+              i termini di utilizzo
             </Link>{' '}
-            to be informed how we manage your private data.
+            Per essere informato su come gestiamo i tuoi dati.
           </Typography>
           <Box paddingY={4}>
             <Divider />
@@ -90,10 +87,10 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your first name
+                  il tuo nome
                 </Typography>
                 <TextField
-                  label="First name *"
+                  label="Nome e cognome *"
                   variant="outlined"
                   name={'fullName'}
                   fullWidth
@@ -111,7 +108,7 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your email
+                  Email
                 </Typography>
                 <TextField
                   label="Email *"
@@ -130,10 +127,10 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Bio
+                  Note
                 </Typography>
                 <TextField
-                  label="Bio"
+                  label="Note e informazioni personali"
                   variant="outlined"
                   name={'bio'}
                   multiline
@@ -154,10 +151,10 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Country
+                  Nazionalità
                 </Typography>
                 <TextField
-                  label="Country *"
+                  label="Nazionalità "
                   variant="outlined"
                   name={'country'}
                   fullWidth
@@ -175,10 +172,10 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  City
+                  Città
                 </Typography>
                 <TextField
-                  label="City *"
+                  label="Città "
                   variant="outlined"
                   name={'city'}
                   fullWidth
@@ -194,10 +191,10 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your address
+                  Inserisci il tuo indirizzo
                 </Typography>
                 <TextField
-                  label="Address *"
+                  label="Indirizzo "
                   variant="outlined"
                   name={'address'}
                   fullWidth
@@ -220,18 +217,18 @@ const General = () => {
                 >
                   <Box marginBottom={{ xs: 1, sm: 0 }}>
                     <Typography variant={'subtitle2'}>
-                      You may also consider to update your{' '}
+                      considera anche di cambiare la tua{' '}
                       <Link
                         color={'primary'}
                         href={'/account-billing'}
                         underline={'none'}
                       >
-                        billing information.
+                        infomazione di pagamento
                       </Link>
                     </Typography>
                   </Box>
                   <Button size={'large'} variant={'contained'} type={'submit'}>
-                    Save
+                    Salva
                   </Button>
                 </Box>
               </Grid>

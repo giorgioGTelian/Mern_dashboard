@@ -17,35 +17,35 @@ const validationSchema = yup.object({
     .string()
     .test(
       'test-number',
-      'Credit card number is invalid',
+      'Il numero di carta di credito non è valido',
       (value) => valid.number(value).isValid,
     ),
   name: yup
     .string()
     .trim()
-    .required('Please specify your name on the card'),
+    .required('Specifica il tuo nome nella carta'),
   date: yup
     .string()
-    .typeError('Not a valid expiration date. Example: MM/YY')
-    .max(5, 'Not a valid expiration date. Example: MM/YY')
+    .typeError('Formato data non valido: MM/AA')
+    .max(5, 'Formato data non valido: MM/AA')
     .matches(
       /([0-9]{2})\/([0-9]{2})/,
-      'Not a valid expiration date. Example: MM/YY',
+      'Formato data non valido: MM/AA',
     )
-    .required('Expiration date is required'),
+    .required('Data di scadenza richiesta'),
   zip: yup
     .string()
     .trim()
-    .min(2, 'Please enter a valid zip')
-    .max(8, 'Please enter a valid zip')
-    .required('Please specify the billing zip code'),
+    .min(2, 'Inserisci un CAP valido')
+    .max(8, 'Inserisci un CAP valido')
+    .required('Inserisci un CAP '),
   cvv: yup
     .string()
     .trim()
-    .matches(/^\d+$/, 'Not a valid CVV. Should contain only numbers')
-    .min(3, 'Please enter a valid cvv')
-    .max(3, 'Please enter a valid cvv')
-    .required('Please specify your card cvv'),
+    .matches(/^\d+$/, 'Inserisci un CVV valido. Deve contenere solo numeri')
+    .min(3, 'Inserisci un CVV valido')
+    .max(3, 'Inserisci un CVV valido')
+    .required('Inserisci un CVV valido'),
 });
 
 const Billing = () => {
@@ -71,23 +71,21 @@ const Billing = () => {
       <Page>
         <Box>
           <Typography variant="h6" gutterBottom fontWeight={700}>
-            Change your card data
+            Cambia i dati della tua carta
           </Typography>
           <Typography
             variant={'subtitle2'}
             color={'text.secondary'}
             gutterBottom
           >
-            Please be informed that we do not share any sensitive information
-            such as your bank card data with any third party agencies and
-            companies.
+            Noi non condividiamo i tuoi dati bancari con nessuno.
           </Typography>
           <Typography variant={'subtitle2'} color={'text.secondary'}>
-            Please read our{' '}
+            Per favore leggi i nostri{' '}
             <Link color={'primary'} href={'/company-terms'} underline={'none'}>
-              terms of use
+              Termini d'uso
             </Link>{' '}
-            to be informed how we manage your bank data.
+            Per essere informato di come gestiamo i tuoi dati
           </Typography>
           <Box paddingY={4}>
             <Divider />
@@ -101,10 +99,10 @@ const Billing = () => {
                     sx={{ marginBottom: 2 }}
                     fontWeight={700}
                   >
-                    Enter your card number
+                    inserisci il tuo nbomero di carta
                   </Typography>
                   <TextField
-                    label="Card number *"
+                    label="Numero di carta *"
                     variant="outlined"
                     name={'cardNumber'}
                     fullWidth
@@ -125,10 +123,10 @@ const Billing = () => {
                     sx={{ marginBottom: 2 }}
                     fontWeight={700}
                   >
-                    Name on the card
+                    Nome sulla carta
                   </Typography>
                   <TextField
-                    label="Name *"
+                    label="Nome *"
                     variant="outlined"
                     name={'name'}
                     fullWidth
@@ -144,10 +142,10 @@ const Billing = () => {
                     sx={{ marginBottom: 2 }}
                     fontWeight={700}
                   >
-                    Expiration date
+                    Data di scadenza
                   </Typography>
                   <TextField
-                    label="Expiration date *"
+                    label="Data di scadenza *"
                     variant="outlined"
                     name={'date'}
                     fullWidth
@@ -163,10 +161,10 @@ const Billing = () => {
                     sx={{ marginBottom: 2 }}
                     fontWeight={700}
                   >
-                    Billing zip code
+                    CAP (Codice di avviamento postale)
                   </Typography>
                   <TextField
-                    label="Zip code *"
+                    label="CAP *"
                     variant="outlined"
                     name={'zip'}
                     fullWidth
@@ -185,7 +183,7 @@ const Billing = () => {
                     CVV
                   </Typography>
                   <TextField
-                    label="Card CVV *"
+                    label="CVV *"
                     variant="outlined"
                     name={'cvv'}
                     fullWidth
@@ -209,13 +207,13 @@ const Billing = () => {
                   >
                     <Box marginBottom={{ xs: 1, sm: 0 }}>
                       <Typography variant={'subtitle2'}>
-                        You may also consider to update your{' '}
+                        Considera anche di aggiornare le tue{' '}
                         <Link
                           color={'primary'}
                           href={'/account-general'}
                           underline={'none'}
                         >
-                          private information.
+                          Informazioni Private
                         </Link>
                       </Typography>
                     </Box>
@@ -224,7 +222,7 @@ const Billing = () => {
                       variant={'contained'}
                       type={'submit'}
                     >
-                      Save
+                      Salva
                     </Button>
                   </Box>
                 </Grid>

@@ -14,22 +14,22 @@ const pages = [
   {
     id: 'general',
     href: '/account-general',
-    title: 'General',
+    title: 'Generale',
   },
   {
     id: 'security',
     href: '/account-security',
-    title: 'Security',
+    title: 'Sicurezza',
   },
   {
     id: 'notifications',
     href: '/account-notifications',
-    title: 'Notifications',
+    title: 'Notifiche',
   },
   {
     id: 'billing',
     href: '/account-billing',
-    title: 'Billing Information',
+    title: 'Informazioni di fatturazione',
   },
 ];
 
@@ -51,10 +51,10 @@ const Page = ({ children }) => {
             gutterBottom
             sx={{ color: 'common.white' }}
           >
-            Account settings
+            Impostazioni Generali
           </Typography>
           <Typography variant="h6" sx={{ color: 'common.white' }}>
-            Change account information and settings
+            Cambia le informazioni e le impostazioni dell'account
           </Typography>
         </Container>
       </Box>

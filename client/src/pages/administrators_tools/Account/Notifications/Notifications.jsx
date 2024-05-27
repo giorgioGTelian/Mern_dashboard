@@ -21,14 +21,14 @@ const Notifications = () => {
             alignItems={{ xs: 'flex-start', md: 'center' }}
           >
             <Typography variant="h6" fontWeight={700}>
-              Update website notifications
+              Aggiorna il modo in cui ricevi notifiche
             </Typography>
             <Button
               size={'large'}
               variant={'outlined'}
               sx={{ marginTop: { xs: 2, md: 0 } }}
             >
-              Reset all
+              Cancella tutto
             </Button>
           </Box>
           <Box paddingY={4}>
@@ -37,9 +37,9 @@ const Notifications = () => {
           <form>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
-                <Typography variant="h6">System settings</Typography>
+                <Typography variant="h6">Impostazioni di applicazione</Typography>
                 <Typography variant="caption">
-                  You will recieve emails in your business email address
+                  Riceverai mail e messaggi alla tua email che hai inserito
                 </Typography>
                 <Box>
                   <Box>
@@ -47,7 +47,7 @@ const Notifications = () => {
                       control={
                         <Checkbox defaultChecked={true} color="primary" />
                       }
-                      label="E-mail alerts"
+                      label="E-mail"
                     />
                   </Box>
                   <Box>
@@ -55,7 +55,7 @@ const Notifications = () => {
                       control={
                         <Checkbox defaultChecked={true} color="primary" />
                       }
-                      label="Push notifications"
+                      label="Notifiche Push"
                     />
                   </Box>
                   <Box>
@@ -63,23 +63,15 @@ const Notifications = () => {
                       control={
                         <Checkbox defaultChecked={true} color="primary" />
                       }
-                      label="Text messages"
-                    />
-                  </Box>
-                  <Box>
-                    <FormControlLabel
-                      control={
-                        <Checkbox defaultChecked={false} color="primary" />
-                      }
-                      label="Phone calles"
+                      label="Messaggi SMS"
                     />
                   </Box>
                 </Box>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Typography variant="h6">Chat settings</Typography>
+                <Typography variant="h6">Impostazioni Applicazione</Typography>
                 <Typography variant="caption">
-                  You will recieve emails in your business email address
+                  Riceverai mail e messaggi alla tua email che hai inserito
                 </Typography>
                 <Box>
                   <Box>
@@ -87,7 +79,7 @@ const Notifications = () => {
                       control={
                         <Checkbox defaultChecked={false} color="primary" />
                       }
-                      label="E-mail alerts"
+                      label="E-mail"
                     />
                   </Box>
                   <Box>
@@ -95,7 +87,7 @@ const Notifications = () => {
                       control={
                         <Checkbox defaultChecked={true} color="primary" />
                       }
-                      label="Push notifications"
+                      label="Notifiche Push"
                     />
                   </Box>
                 </Box>
@@ -111,18 +103,18 @@ const Notifications = () => {
                 >
                   <Box marginBottom={{ xs: 1, sm: 0 }}>
                     <Typography variant={'subtitle2'}>
-                      You may also consider to update your{' '}
+                      Considera anche di aggiornare le tue{' '}
                       <Link
                         color={'primary'}
-                        href={'/account-security'}
+                        href={'/account-notifications'}
                         underline={'none'}
                       >
-                        security settings.
+                        Impostazioni di notifica
                       </Link>
                     </Typography>
                   </Box>
                   <Button size={'large'} variant={'contained'} type={'submit'}>
-                    Save
+                    Salva
                   </Button>
                 </Box>
               </Grid>
