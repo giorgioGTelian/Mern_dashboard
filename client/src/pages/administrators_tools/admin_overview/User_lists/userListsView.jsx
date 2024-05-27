@@ -3,6 +3,7 @@ import { Box, useTheme } from "@mui/material";
 import { useGetAllUsersQuery } from "../../../../state/api";
 import { DataGrid } from "@mui/x-data-grid";
 import CustomColumnMenu from "components/DataGridCustomColumnMenu";
+import AdministratorOverview from "../administratorOverview";
 
 const UserListsView = () => {
     const theme = useTheme();
@@ -48,6 +49,7 @@ const UserListsView = () => {
       },
     ];
     return (
+      <AdministratorOverview>
         <Box
         sx={{
           "& .MuiDataGrid-root": {
@@ -80,6 +82,7 @@ const UserListsView = () => {
           }}
         />
       </Box>
+      </AdministratorOverview>
     )
 }
 

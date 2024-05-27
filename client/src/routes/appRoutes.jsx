@@ -165,7 +165,7 @@ const appRoutes = [
             },
         },
         {
-            path: "/statistiche",
+            path: "/User_lists",
             // element: <ButtonPage />,
             state: "component.button",
             sidebarProps: {

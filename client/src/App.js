@@ -20,6 +20,8 @@ import { Billing } from "./pages/administrators_tools/Account";
 import PasswordResetCover from "./pages/forgot_password/PasswordResetCover";
 import NotFound from "./pages/NotFound";
 import Faq from "./pages/Faq";
+import UserListsView from "pages/administrators_tools/admin_overview/User_lists/userListsView";
+import AddAccountView from "pages/administrators_tools/admin_overview/Add_account/AddAccountView";
 
 
 
@@ -47,6 +49,8 @@ function App() {
               <Route path="/account-security" element={<Security />} />
               <Route path="/account-notifications" element={<Notifications />} />
               <Route path="/account-billing" element={<Billing />} />
+              <Route path="/User_lists" element={<UserListsView />} />
+              <Route path="/Add_account" element={<AddAccountView />} />
             </Route>
             <Route path="/registrati" element={<SignUp />} />
             <Route path="/password-reset" element={<PasswordResetCover />} />

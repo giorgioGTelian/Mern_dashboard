@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { Box, useTheme, Container, Typography, Card, Grid, List, ListItem} from "@mui/material";
-import Header from "../../../components/Headers";
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+
+import Container from 'components/Container';
 
 const pages = [
   {
-    id: 'usersList',
-    href: '/Users_list',
+    id: 'UserListsView',
+    href: '/User_lists',
     title: 'Lista utenti',
   },
   {
-    id: 'addUsers',
-    href: '/Add_users',
-    title: 'Aggiungi account',
+    id: 'AddAccountView',
+    href: '/Add_account',
+    title: 'Aggiungi Account',
   },
 ];
 
@@ -20,13 +28,27 @@ const AdministratorOverview = ({ children }) => {
   useEffect(() => {
     setActiveLink(window && window.location ? window.location.pathname : '');
   }, []);
-  const theme = useTheme();
 
+  const theme = useTheme();
 
   return (
     <Box>
-      <Header paddingY={4} title="Lista utenti e statistiche" subtitle="Lista utenti del Sistema" />
-      <Container paddingTop={'0 !important'} marginTop={-10}>
+      <Box bgcolor={'primary.main'} paddingY={4}>
+        <Container>
+          <Typography
+            variant="h4"
+            fontWeight={700}
+            gutterBottom
+            sx={{ color: 'common.white' }}
+          >
+            Statistiche Utenti
+          </Typography>
+          <Typography variant="h6" sx={{ color: 'common.white' }}>
+            Inserisci e controlla utenti
+          </Typography>
+        </Container>
+      </Box>
+      <Container paddingTop={'0 !important'} marginTop={-8}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={3}>
             <Card sx={{ boxShadow: 3 }}>
@@ -88,5 +110,10 @@ const AdministratorOverview = ({ children }) => {
     </Box>
   );
 };
+
+AdministratorOverview.propTypes = {
+    children: PropTypes.node,
+    };
+    
 
 export default AdministratorOverview;
