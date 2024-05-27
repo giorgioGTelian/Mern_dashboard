@@ -79,6 +79,10 @@ export const themeSettings = (mode) => {
                         dark: '#DBBE01',
                         contrastText: 'rgba(0, 0, 0, 0.87)',
                     },
+                    neutral: {
+                        main: '#2D3748',
+                        light: '#A0DEFF',
+                    },
                     text: {
                         primary: '#EEEEEF',
                         secondary: '#AEB0B4',
@@ -107,7 +111,7 @@ export const themeSettings = (mode) => {
                     },
                     neutral: {
                         ...tokensLight.grey,
-                        main: tokensDark.grey[500],
+                        main: '#f5f5f5',
                     },
                     text: {
                         primary: '#1e2022',

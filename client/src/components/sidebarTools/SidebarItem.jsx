@@ -1,11 +1,13 @@
 import { ListItemButton, ListItemIcon } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+//import { useSelector } from "react-redux";
 import { useTheme } from "@mui/material/styles";
 
 const SidebarItem = ({ item }) => {
-    const appState = useSelector((state) => state.global.appState);
+    //const appState = useSelector((state) => state.global.appState);
+    //TODO find a solution to the appState with redux
     const theme = useTheme();
+    const location = useLocation();
 
     return (
         item.sidebarProps && item.path ? (
@@ -16,7 +18,7 @@ const SidebarItem = ({ item }) => {
             "&: hover": {
                 backgroundColor: theme.palette.secondary[300],
             },
-            backgroundColor: appState === item.state ? theme.palette.primary[600] : "unset",
+            backgroundColor: location.pathname === item.path ? theme.palette.neutral.main : "unset",
             paddingY: "12px",
             paddingX: "24px"
             }}

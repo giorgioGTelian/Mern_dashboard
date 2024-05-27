@@ -169,7 +169,7 @@ const appRoutes = [
             // element: <ButtonPage />,
             state: "component.button",
             sidebarProps: {
-            displayText: "Statistiche",
+            displayText: "Gestione account",
             },
         },
         ],
