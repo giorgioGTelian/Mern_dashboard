@@ -1,90 +1,90 @@
-import React from "react";
-import { Box, useTheme, Container, Typography } from "@mui/material";
-import { useGetAllUsersQuery } from "state/api";
-import { DataGrid } from "@mui/x-data-grid";
+import React, { useState, useEffect } from "react";
+import { Box, useTheme, Container, Typography, Card, Grid, List, ListItem} from "@mui/material";
 import Header from "../../../components/Headers";
-import CustomColumnMenu from "components/DataGridCustomColumnMenu";
 
-const AdministratorOverview = () => {
+const pages = [
+  {
+    id: 'usersList',
+    href: '/Users_list',
+    title: 'Lista utenti',
+  },
+  {
+    id: 'addUsers',
+    href: '/Add_users',
+    title: 'Aggiungi account',
+  },
+];
+
+const AdministratorOverview = ({ children }) => {
+  const [activeLink, setActiveLink] = useState('');
+  useEffect(() => {
+    setActiveLink(window && window.location ? window.location.pathname : '');
+  }, []);
   const theme = useTheme();
-  const { data, isLoading } = useGetAllUsersQuery();
 
-  const columns = [
-    {
-      field: "_id",
-      headerName: "ID",
-      flex: 1,
-    },
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 0.5,
-    },
-    {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
-    {
-      field: "phoneNumber",
-      headerName: "Phone Number",
-      flex: 0.5,
-      renderCell: (params) => {
-        return params.value.replace(/^(\d{3})(\d{3})(\d{4})/, "($1)$2-$3");
-      },
-    },
-    {
-      field: "country",
-      headerName: "Country",
-      flex: 0.4,
-    },
-    {
-      field: "occupation",
-      headerName: "Occupation",
-      flex: 1,
-    },
-    {
-      field: "role",
-      headerName: "Role",
-      flex: 0.5,
-    },
-  ];
 
   return (
     <Box>
-      <Header title="Lista utenti e statistiche" subtitle="Lista utenti del Sistema" />
-      <Box
-        sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            color: theme.palette.secondary[100],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-footerContainer": {
-            backgroundColor: theme.palette.background.alt,
-            color: theme.palette.secondary[100],
-            borderTop: "none",
-          },
-          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${theme.palette.secondary[200]} !important`,
-          },
-        }}
-      >
-        <DataGrid
-          loading={isLoading || !data}
-          getRowId={(row) => row._id}
-          rows={data || []}
-          columns={columns}
-          components={{
-            ColumnMenu: CustomColumnMenu,
-          }}
-        />
-      </Box>
+      <Header paddingY={4} title="Lista utenti e statistiche" subtitle="Lista utenti del Sistema" />
+      <Container paddingTop={'0 !important'} marginTop={-10}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={3}>
+            <Card sx={{ boxShadow: 3 }}>
+              <List
+                disablePadding
+                sx={{
+                  display: { xs: 'inline-flex', md: 'flex' },
+                  flexDirection: { xs: 'row', md: 'column' },
+                  overflow: 'auto',
+                  flexWrap: 'nowrap',
+                  width: '100%',
+                  paddingY: { xs: 3, md: 4 },
+                  paddingX: { xs: 4, md: 0 },
+                }}
+              >
+                {pages.map((item) => (
+                  <ListItem
+                    key={item.id}
+                    component={'a'}
+                    href={item.href}
+                    disableGutters
+                    sx={{
+                      marginRight: { xs: 2, md: 0 },
+                      flex: 0,
+                      paddingX: { xs: 0, md: 3 },
+                      borderLeft: {
+                        xs: 'none',
+                        md: '2px solid transparent',
+                      },
+                      borderLeftColor: {
+                        md:
+                          activeLink === item.href
+                            ? theme.palette.primary.main
+                            : 'transparent',
+                      },
+                    }}
+                  >
+                    <Typography
+                      variant="subtitle1"
+                      noWrap
+                      color={
+                        activeLink === item.href
+                          ? 'text.primary'
+                          : 'text.secondary'
+                      }
+                    >
+                      {item.title}
+                    </Typography>
+                  </ListItem>
+                ))}
+              </List>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={9}>
+            <Card sx={{ boxShadow: 3, padding: 4 }}>{children}</Card>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
 };

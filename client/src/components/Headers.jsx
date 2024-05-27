@@ -4,7 +4,7 @@ import { Typography, Box, Container } from "@mui/material";
 const Header = ({ title, subtitle }) => {
 
     return (
-        <Box bgcolor={'primary.main'} paddingY={4}>
+        <Box bgcolor={'primary.main'} paddingY={8} paddingX={8}>
         <Container>
             <Typography
             variant="h4"
