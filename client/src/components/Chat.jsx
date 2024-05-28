@@ -3,16 +3,12 @@ import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
+import Key from '@mui/icons-material/Key';
+import { LiveHelp } from '@mui/icons-material';
 
 const actions = [
-    { icon: <FileCopyIcon />, name: 'Copy' },
-    { icon: <SaveIcon />, name: 'Save' },
-    { icon: <PrintIcon />, name: 'Print' },
-    { icon: <ShareIcon />, name: 'Share' },
+    { icon: <LiveHelp />, name: 'Faq', link: '/FAQs'},
+    { icon: <Key />, name: 'Reset Password', link: '/password-reset'}
 ];
 
 export default function BasicSpeedDial() {
@@ -28,6 +24,10 @@ export default function BasicSpeedDial() {
                 key={action.name}
                 icon={action.icon}
                 tooltipTitle={action.name}
+                onClick={() => {window 
+                    .location
+                    .assign(action.link)}
+                }
             />
             ))}
         </SpeedDial>

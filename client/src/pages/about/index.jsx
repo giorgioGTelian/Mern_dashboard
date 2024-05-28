@@ -20,8 +20,6 @@ const about = () => {
         <Link to="/dashboard">Go to the dashboard</Link>
         <Chat />
         </Box>
-
-
         </>
     )
 }
