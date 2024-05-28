@@ -157,7 +157,7 @@ const appRoutes = [
         },
         child: [
         {
-            path: "/account-general",
+            path: ["/account-general", "/account-security", "/account-notifications", "/account-billing"],
             element: <Page />,
             state: "component.alert",
             sidebarProps: {
@@ -165,11 +165,11 @@ const appRoutes = [
             },
         },
         {
-            path: "/User_lists",
+            path: ["/User_lists", "/Add_account"],
             // element: <ButtonPage />,
             state: "component.button",
             sidebarProps: {
-            displayText: "Gestione account",
+                displayText: "Gestione account",
             },
         },
         ],

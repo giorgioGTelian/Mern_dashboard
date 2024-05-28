@@ -4,17 +4,25 @@ import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import SidebarItem from "./SidebarItem";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const SidebarItemCollapse = ({ item }) => {
     const [open, setOpen] = useState(false);
 
     const appState = useSelector((state) => state.global.appState);
 
+    const location = useLocation();
+
     useEffect(() => {
         if (appState.includes(item.state)) {
-        setOpen(true);
+            setOpen(true);
         }
-    }, [appState, item]);
+
+        // Check if any child paths match the current location
+        if (item.child?.some(route => Array.isArray(route.path) ? route.path.includes(location.pathname) : route.path === location.pathname)) {
+            setOpen(true);
+        }
+    }, [appState, item, location]);
 
     return (
         item.sidebarProps ? (
