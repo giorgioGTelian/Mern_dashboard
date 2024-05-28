@@ -5,9 +5,9 @@ import {
     DarkModeOutlined,
     Menu as MenuIcon,
     Search,
-    SettingsOutlined,
     ArrowDropDownOutlined,
     AlbumOutlined,
+    Notifications,
 } from "@mui/icons-material";
 import FlexBetween from "./FlexBetween";
 import { useDispatch } from "react-redux";
@@ -77,7 +77,7 @@ return (
             )}
         </IconButton>
         <IconButton>
-            <SettingsOutlined sx={{ fontSize: "25px" }} />
+            <Notifications sx={{ fontSize: "25px" }} />
         </IconButton>
 
         <FlexBetween >
@@ -95,18 +95,20 @@ return (
                 <Typography
                 fontWeight="bold"
                 fontSize="0.85rem"
-                sx={{ color: theme.palette.secondary[100] }}
+                sx={{ color: theme.palette.secondary.dark }}
                 >
                 </Typography>
                 <Typography
                 fontSize="0.75rem"
-                sx={{ color: theme.palette.secondary[200] }}
+                sx={{ color: theme.palette.dark }}
                 >
                 </Typography>
             </Box>
-            <Avatar src={profileImage} /> {user.name} 
+            <Avatar src={profileImage} /> <Typography sx={{ color: theme.palette.neutral.dark }}>
+                {user.name}
+            </Typography>
             <ArrowDropDownOutlined
-                sx={{ color: theme.palette.secondary[300] }}
+                sx={{ color: theme.palette.neutral.dark }}
             />
             </Button>
             <Menu
@@ -126,12 +128,13 @@ return (
                 height: 32,
                 ml: -0.5,
                 mr: 1,
+                color: theme.palette.secondary[100],
                 },
             },
             }}
             transformOrigin={{ horizontal: 'right', vertical: 'top' }}
             >
-            <MenuItem component={Link} to="/profilo">
+                <MenuItem component={Link} to="/profilo" >
                 <Avatar src={profileImage} /> {user.name}
                 </MenuItem>
                 <MenuItem component={Link} to="/aggiungi_account">
