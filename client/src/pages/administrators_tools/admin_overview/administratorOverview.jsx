@@ -41,7 +41,7 @@ const AdministratorOverview = ({ children }) => {
             gutterBottom
             sx={{ color: 'common.white' }}
           >
-            Statistiche Utenti
+            Gestione Account
           </Typography>
           <Typography variant="h6" sx={{ color: 'common.white' }}>
             Inserisci e controlla utenti
