@@ -25,6 +25,7 @@ import AddAccountView from "pages/administrators_tools/admin_overview/Add_accoun
 
 
 
+
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]); // Get the theme
