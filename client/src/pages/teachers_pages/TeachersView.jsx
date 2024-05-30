@@ -1,7 +1,7 @@
 import General from './General';
 import * as yup from 'yup';
 
-const TeachersView = () => {
+const TeachersView = ({ Teacher, subjects, students }) => {
   const initialValues = {
     // ... initial values ...
   };
@@ -22,7 +22,11 @@ const TeachersView = () => {
       onSubmit={onSubmit}
       validationSchema={validationSchema}
       title={title}
+      Teacher={Teacher}
+      subjects={subjects}
+      students={students}
     />
   );
 };
+
 export default TeachersView;

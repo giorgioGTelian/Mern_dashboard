@@ -17489,16 +17489,27 @@ export const dataAffiliateStat = [
     {
       id: uuidv4(),
       name: "Teacher 1",
+      phoneNumberTeacher: "",
+      emailTeacher: "", 
       subjects: ["math", "english"],
-      students: ["gianni luigi"], 
+      students: ["gianni luigi"],
+      teacherDocuments: [],
+      teacherPayments: [],
+      teacherBillings: [ "Ritenuta d'acconto del 20%",  "Fatturazione senza IVA",  "Fatturazione con IVA al 22%",  "Nessuna dei precedenti"],
+      teacherNotes: "",
     },
     {
       id: uuidv4(),
       name: "Teacher 2",
+      phoneNumberTeacher: "",
+      emailTeacher: "", 
       subjects: ["science"],
       students: ["gianni luigi"],
+      teacherDocuments: [],
+      teacherPayments: [],
+      teacherBillings: [ "Ritenuta d'acconto del 20%",  "Fatturazione senza IVA",  "Fatturazione con IVA al 22%",  "Nessuna dei precedenti"],
+      teacherNotes: "", 
     },
-    
   ];
 
   export const dataLessonsPackages = [

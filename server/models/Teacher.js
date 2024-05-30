@@ -7,8 +7,14 @@ const teacherSchema = new Schema({
         default: () => uuidv4()
     },
     name: String,
+    phoneNumberTeacher: String,
+    emailTeacher: String,
     subjects: [String],
     students: [String],
+    teacherDocuments: String,
+    teacherPayments: String,
+    teacherBilling: String,
+    teacherNotes: String,
 });
 
 export const Teacher = mongoose.model('Teacher', teacherSchema);
