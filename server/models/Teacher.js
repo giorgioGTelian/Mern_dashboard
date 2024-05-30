@@ -11,10 +11,14 @@ const teacherSchema = new Schema({
     emailTeacher: String,
     subjects: [String],
     students: [String],
-    teacherDocuments: String,
-    teacherPayments: String,
-    teacherBilling: String,
+    teacherDocuments: [String], 
+    teacherPayments: [String],
+    teacherBilling: {
+        type: String,
+        enum: [ "Ritenuta d'acconto del 20%",  "Fatturazione senza IVA",  "Fatturazione con IVA al 22%",  "Nessuna dei precedenti"],
+        default:  "Ritenuta d'acconto del 20%",
+    },
     teacherNotes: String,
 });
-
-export const Teacher = mongoose.model('Teacher', teacherSchema);
+const Teacher = mongoose.model('Teacher', teacherSchema);
+export default Teacher;

@@ -10,6 +10,7 @@ import clientRoutes from './routes/client.js';
 import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
+import teacherRoutes from './routes/teacher.js';
 
 /*
 import userRoutes from './routes/users.js';
@@ -40,9 +41,12 @@ import apiV1Routes from './routes/apiV1.js';
 */
 
 /* data import */ 
-import User from './models/User.js';
-import { dataUser, dataStudent } from './data/index.js';
-import { getAllUsers } from './controllers/general.js';
+//import User from './models/User.js';
+//import { dataUser, dataStudent } from './data/index.js';
+import { dataTeacher } from './data/index.js';
+//import { getAllUsers } from './controllers/general.js';
+import Teacher  from './models/Teacher.js';
+//import { getAllTeachers } from './controllers/teacher.js';
 
 
 
@@ -100,6 +104,9 @@ app.use("/client", clientRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
+//teachers
+app.use("/teacher", teacherRoutes);
+
 /*
 //api routes
 app.use('/api', apiRoutes);
@@ -131,5 +138,7 @@ mongoose.connect(process.env.MONGO_URL)
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
     //User.insertMany(dataUser); 
+    //Student.insertMany(dataStudent);
+    Teacher.insertMany(dataTeacher);
 })
 .catch((error) => console.log(`${error} did not connect`));

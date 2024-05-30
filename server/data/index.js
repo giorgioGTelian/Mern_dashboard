@@ -17485,7 +17485,7 @@ export const dataAffiliateStat = [
     },
   ];
 
-  export const dataTeachers = [
+  export const dataTeacher = [
     {
       id: uuidv4(),
       name: "Teacher 1",
@@ -17495,7 +17495,7 @@ export const dataAffiliateStat = [
       students: ["gianni luigi"],
       teacherDocuments: [],
       teacherPayments: [],
-      teacherBillings: [ "Ritenuta d'acconto del 20%",  "Fatturazione senza IVA",  "Fatturazione con IVA al 22%",  "Nessuna dei precedenti"],
+      teacherBillings: [ "Ritenuta d'acconto del 20%"],
       teacherNotes: "",
     },
     {
@@ -17507,7 +17507,7 @@ export const dataAffiliateStat = [
       students: ["gianni luigi"],
       teacherDocuments: [],
       teacherPayments: [],
-      teacherBillings: [ "Ritenuta d'acconto del 20%",  "Fatturazione senza IVA",  "Fatturazione con IVA al 22%",  "Nessuna dei precedenti"],
+      teacherBillings: [ "Ritenuta d'acconto del 20%"],
       teacherNotes: "", 
     },
   ];
