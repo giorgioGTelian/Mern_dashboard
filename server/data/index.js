@@ -17491,7 +17491,7 @@ export const dataAffiliateStat = [
       name: "Teacher 1",
       phoneNumberTeacher: "",
       emailTeacher: "", 
-      subjects: ["math", "english"],
+      subjects: [],
       students: ["gianni luigi"],
       teacherDocuments: [],
       teacherPayments: [],
@@ -17503,7 +17503,7 @@ export const dataAffiliateStat = [
       name: "Teacher 2",
       phoneNumberTeacher: "",
       emailTeacher: "", 
-      subjects: ["science"],
+      subjects: [],
       students: ["gianni luigi"],
       teacherDocuments: [],
       teacherPayments: [],
@@ -17547,5 +17547,28 @@ export const dataAffiliateStat = [
   ]
 
   export const dataSubjects = [
-    
+    {
+      id: uuidv4(),
+      name: "Matematica",
+      description: "",
+      subjectColor: "#f33535",
+    },
+    {
+      id: uuidv4(),
+      name: "Inglese",
+      description: "",
+      subjectColor: "#343DEB",
+    },
+    {
+      id: uuidv4(),
+      name: "Tedesco",
+      description: "",
+      subjectColor: "#010101",
+    },
+    {
+      id: uuidv4(),
+      name: "Economia",
+      description: "",
+      subjectColor: "#F38F35",
+    },
   ]

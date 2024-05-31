@@ -43,11 +43,15 @@ import apiV1Routes from './routes/apiV1.js';
 /* data import */ 
 //import User from './models/User.js';
 //import { dataUser, dataStudent } from './data/index.js';
-import { dataTeacher } from './data/index.js';
+
+//import { dataTeacher } from './data/index.js';
 //import { getAllUsers } from './controllers/general.js';
-import Teacher  from './models/Teacher.js';
+
+//import Teacher  from './models/Teacher.js';
 //import { getAllTeachers } from './controllers/teacher.js';
 
+import Subject from './models/Subject.js';
+import { dataSubjects } from './data/index.js';
 
 
 /* configuration */
@@ -139,7 +143,8 @@ mongoose.connect(process.env.MONGO_URL)
     // Transaction.insertMany(dataTransaction);
     
     //Student.insertMany(dataStudent);
-    
+
+    Subject.insertMany(dataSubjects);
     //DONE
     //Teacher.insertMany(dataTeacher);
     //User.insertMany(dataUser); 
