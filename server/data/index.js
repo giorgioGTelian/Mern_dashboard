@@ -17545,3 +17545,7 @@ export const dataAffiliateStat = [
       name: "Inglese"
     }
   ]
+
+  export const dataSubjects = [
+    
+  ]

@@ -137,8 +137,11 @@ mongoose.connect(process.env.MONGO_URL)
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
-    //User.insertMany(dataUser); 
+    
     //Student.insertMany(dataStudent);
-    Teacher.insertMany(dataTeacher);
+    
+    //DONE
+    //Teacher.insertMany(dataTeacher);
+    //User.insertMany(dataUser); 
 })
 .catch((error) => console.log(`${error} did not connect`));

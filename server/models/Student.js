@@ -5,7 +5,7 @@ const studentSchema = new Schema({
 id: {
     type: String,
     default: () => uuidv4()
- },
+},
     name: String,
     email: String,
     password: String,
