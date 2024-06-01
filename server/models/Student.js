@@ -13,6 +13,7 @@ id: {
     subjects: [String],
     grade: Number,
     school: String,
+    client:[String],
     teachers: [String],
     lessonsPackages: [String],
     lessons: [String],

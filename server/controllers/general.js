@@ -22,12 +22,15 @@ export const getAllUsers = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
-// Compare this snippet from server/routes/index.js:
-// import express from 'express';
-// import generalRoutes from './general.js';
-//
-// const router = express.Router();
-//
-// router.use('/', generalRoutes);
-//
-// export default router;
+
+export const createUser = async (req, res) => {
+    const user = req.body;
+    const newUser = new User(user);
+    try {
+        await newUser.save();
+        res.status(201).json(newUser);
+    }
+    catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}

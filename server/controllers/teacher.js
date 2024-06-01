@@ -21,3 +21,15 @@ export const getAllTeachers = async (req, res) => {
         res.status(404).json({ message: error.message });
     }
 }
+
+export const createTeacher = async (req, res) => {
+    const teacher = req.body;
+    const newTeacher = new Teacher(teacher);
+    try {
+        await newTeacher.save();
+        res.status(201).json(newTeacher);
+    }
+    catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}

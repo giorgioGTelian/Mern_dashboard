@@ -17417,6 +17417,7 @@ export const dataAffiliateStat = [
       subjects: ["math", "english", "science"],
       grade: 10,
       school: "sma 1",
+      client:[],
       teachers: [],
       lessonsPackages: [],
       lessons: [],
@@ -17432,6 +17433,7 @@ export const dataAffiliateStat = [
       subjects: ["history", "english", "science"],
       grade: 11,
       school: "sma 2",
+      client:[],
       teachers: [],
       lessonsPackages: [],
       lessons: [],
@@ -17529,7 +17531,7 @@ export const dataAffiliateStat = [
       id: uuidv4(),
       name: "lezione da 20 ore"
     },
-  ]
+  ];
 
   export const dataLessons = [
     {
@@ -17544,7 +17546,7 @@ export const dataAffiliateStat = [
       id: uuidv4(),
       name: "Inglese"
     }
-  ]
+  ];
 
   export const dataSubjects = [
     {
@@ -17571,4 +17573,4 @@ export const dataAffiliateStat = [
       description: "",
       subjectColor: "#F38F35",
     },
-  ]
+  ];

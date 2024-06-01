@@ -144,8 +144,9 @@ mongoose.connect(process.env.MONGO_URL)
     
     //Student.insertMany(dataStudent);
 
-    Subject.insertMany(dataSubjects);
+    
     //DONE
+    //Subject.insertMany(dataSubjects);
     //Teacher.insertMany(dataTeacher);
     //User.insertMany(dataUser); 
 })
