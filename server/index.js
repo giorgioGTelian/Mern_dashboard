@@ -50,8 +50,20 @@ import apiV1Routes from './routes/apiV1.js';
 //import Teacher  from './models/Teacher.js';
 //import { getAllTeachers } from './controllers/teacher.js';
 
-import Subject from './models/Subject.js';
-import { dataSubjects } from './data/index.js';
+//import Subject from './models/Subject.js';
+//import { dataSubjects } from './data/index.js';
+/******************************************************* */
+
+/*** passport configuration ****/
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import passportJwt from 'passport-jwt';
+import bcrypt from 'bcrypt';
+import User from './models/User.js';
+/******************************************************** */
+
+
+
 
 
 /* configuration */
@@ -65,8 +77,73 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+/** passport session **/
+app.use(passport.initialize());
+app.use(passport.session());
 
+passport.serializeUser(User.serializeUser()); 
+passport.deserializeUser(User.deserializeUser()); 
 
+/* passport configuration */
+
+const LocalStrategy = passportLocal.Strategy;
+const JwtStrategy = passportJwt.Strategy;
+const ExtractJwt = passportJwt.ExtractJwt;
+
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+}, async (email, password, done) => {
+    try {
+        const user
+        = await
+        User.findOne({ email: email });
+        if (!user) {
+            return done(null, false, { message: 'Incorrect email' });
+        }
+        const validate = await bcrypt.compare(password, user.password);
+        if (!validate) {
+            return done(null, false, { message: 'Incorrect password' });
+        }
+        return done(null, user, { message: 'Logged in successfully' });
+    } catch (error) {
+        return done(error);
+    }
+}
+));
+
+passport.use(new JwtStrategy({
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    secretOrKey: process.env.JWT_SECRET
+}, async (jwtPayload, done) => {
+    try {
+        const user
+        = await
+        User.findById(jwtPayload._id);
+        if (!user) {
+            return done(null, false, { message: 'User not found' });
+        }
+        return done(null, user);
+    } catch (error) {
+        return done(error);
+    }
+}
+));
+
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL:  `http://localhost:${PORT}/auth/google/callback`
+},
+    function (accessToken, refreshToken, profile, done) {
+        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+            return done(err, user);
+        });
+    }
+));
+/************************************************************************************* */
 /* routes */
 
 app.use("/general", generalRoutes);  

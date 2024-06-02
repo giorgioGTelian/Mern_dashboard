@@ -1,6 +1,7 @@
 //schema that defines the structure of the user data
 import mongoose from 'mongoose';
-//TODO add more fields to the user schema - also id
+import passportLocalMongoose from 'passport-local-mongoose';
+
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -37,6 +38,9 @@ const UserSchema = new mongoose.Schema({
 },
     { timestamps: true }
 );
+
+// plugin for passport-local-mongoose to handle password hashing
+UserSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model("User", UserSchema);
 export default User;
