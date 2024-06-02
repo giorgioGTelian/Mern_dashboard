@@ -3,42 +3,11 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-//import postRoutes from './routes/posts.js';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import clientRoutes from './routes/client.js';
 import generalRoutes from './routes/general.js';
-import managementRoutes from './routes/management.js';
-import salesRoutes from './routes/sales.js';
 import teacherRoutes from './routes/teacher.js';
-
-/*
-import userRoutes from './routes/users.js';
-import authRoutes from './routes/auth.js';
-import adminRoutes from './routes/admin.js';
-import profileRoutes from './routes/profile.js';
-import postRoutes from './routes/posts.js';
-import studentRoutes from './routes/student.js';
-import schoolRoutes from './routes/school.js';
-import classroomRoutes from './routes/classroom.js';
-import subjectRoutes from './routes/subject.js';
-import teacherRoutes from './routes/teacher.js';
-import attendanceRoutes from './routes/attendance.js';
-import lessonRoutes from './routes/lesson.js';
-import examRoutes from './routes/exam.js';
-import resultRoutes from './routes/result.js';
-import paymentRoutes from './routes/payment.js';
-import notificationRoutes from './routes/notification.js';
-import reportRoutes from './routes/report.js';
-import settingRoutes from './routes/setting.js';
-import supportRoutes from './routes/support.js';
-import chatRoutes from './routes/chat.js';
-import eventRoutes from './routes/event.js';
-import feedbackRoutes from './routes/feedback.js';
-import subscriptionRoutes from './routes/subscription.js';
-import apiRoutes from './routes/api.js';
-import apiV1Routes from './routes/apiV1.js';
-*/
 
 /* data import */ 
 //import User from './models/User.js';
@@ -56,10 +25,8 @@ import apiV1Routes from './routes/apiV1.js';
 
 /*** passport configuration ****/
 import passport from 'passport';
-import passportLocal from 'passport-local';
-import passportJwt from 'passport-jwt';
-import bcrypt from 'bcrypt';
 import User from './models/User.js';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 /******************************************************** */
 
 
@@ -78,15 +45,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 /** passport session **/
-app.use(passport.initialize());
+/* app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser(User.serializeUser()); 
-passport.deserializeUser(User.deserializeUser()); 
+passport.deserializeUser(User.deserializeUser());  */
 
 /* passport configuration */
 
-const LocalStrategy = passportLocal.Strategy;
+/* const LocalStrategy = passportLocal.Strategy;
 const JwtStrategy = passportJwt.Strategy;
 const ExtractJwt = passportJwt.ExtractJwt;
 
@@ -128,9 +95,7 @@ passport.use(new JwtStrategy({
         return done(error);
     }
 }
-));
-
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+)); */
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -143,9 +108,11 @@ passport.use(new GoogleStrategy({
         });
     }
 ));
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
 /************************************************************************************* */
 /* routes */
-
+//for user and admin login and registration
 app.use("/general", generalRoutes);  
 
 
@@ -162,7 +129,6 @@ app.use("/student", studentRoutes);
 app.use("/school", schoolRoutes);
 app.use("/classroom", classroomRoutes);
 app.use("/subject", subjectRoutes);
-app.use("/teacher", teacherRoutes);
 app.use("/attendance", attendanceRoutes);
 app.use("/lesson", lessonRoutes);
 
@@ -182,8 +148,6 @@ app.use("/feedback", feedbackRoutes);
 app.use("/subscription", subscriptionRoutes);
 */
 app.use("/client", clientRoutes);
-app.use("/management", managementRoutes);
-app.use("/sales", salesRoutes);
 
 //teachers
 app.use("/teacher", teacherRoutes);
