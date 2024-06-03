@@ -27,10 +27,8 @@ import teacherRoutes from './routes/teacher.js';
 import passport from 'passport';
 import User from './models/User.js';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import { createGoogleUser } from './controllers/general.js';
 /******************************************************** */
-
-
-
 
 
 /* configuration */
@@ -102,13 +100,52 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL:  `http://localhost:${PORT}/auth/google/callback`
 },
-    function (accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ googleId: profile.id }, function (err, user) {
-            return done(err, user);
-        });
+    async function (accessToken, refreshToken, profile, done) {
+        console.log(profile);
+        console.log(profile.id);
+        try {
+            const profileData = {
+                id: profile.id,
+                name: profile.displayName,
+                email: profile.emails[0].value,
+                city: '', // Default city for new users
+                state: '',
+                country: '',
+                occupation: '',
+                phoneNumber: '',
+                transactions: [],
+                role: 'user' // Default role for new users
+            };
+            const user = await createGoogleUser(profile.id, profileData);
+            return done(null, user);
+        } catch (err) {
+            return done(err, null);
+        }
     }
 ));
+
+// Serialize and deserialize user
+passport.serializeUser((user, done) => {
+    console.log('serializeUser', user);
+    done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = await User.findById(id);
+        done(null, user);
+    } catch (err) {
+        done(err, null);
+    }
+});
+
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
+    function (req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    });
+
 
 /************************************************************************************* */
 /* routes */
