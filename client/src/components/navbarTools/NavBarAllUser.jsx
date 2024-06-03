@@ -1,12 +1,15 @@
 import React from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, MenuItem, Typography } from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
 import { useGetAllUsersQuery } from 'state/api';
+import { useDispatch } from "react-redux";
+import { setUser } from "state";
 
 
 const NavBarAllUser = () => {
 
     const { data: users, isLoading } = useGetAllUsersQuery();
+    const dispatch = useDispatch();
 
     if (isLoading) return <div>Loading...</div>;
 
@@ -20,15 +23,15 @@ const NavBarAllUser = () => {
             <Typography>Lista Utenti</Typography>
             </AccordionSummary>
             <AccordionDetails>
-            <List>
-                {users.map((user) => (
-                <ListItem key={user._id}>
-                    <ListItemAvatar>
-                    </ListItemAvatar>
-                    <ListItemText primary={user.name} />
-                </ListItem>
-                ))}
-            </List>
+            {isLoading ? (
+                <MenuItem>Loading...</MenuItem>
+            ) : (
+                users.map((user) => (
+                    <MenuItem onClick={() => dispatch(setUser(user.id))}>
+                        {user.name}
+                    </MenuItem>
+                ))
+            )}
             </AccordionDetails>
         </Accordion>
         )
