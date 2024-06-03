@@ -43,11 +43,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 /** passport session **/
-/* app.use(passport.initialize());
-app.use(passport.session());
-
-passport.serializeUser(User.serializeUser()); 
-passport.deserializeUser(User.deserializeUser());  */
 
 /* passport configuration */
 
@@ -101,8 +96,6 @@ passport.use(new GoogleStrategy({
     callbackURL:  `http://localhost:${PORT}/auth/google/callback`
 },
     async function (accessToken, refreshToken, profile, done) {
-        console.log(profile);
-        console.log(profile.id);
         try {
             const profileData = {
                 id: profile.id,
@@ -116,7 +109,7 @@ passport.use(new GoogleStrategy({
                 transactions: [],
                 role: 'user' // Default role for new users
             };
-            const user = await createGoogleUser(profile.id, profileData);
+            const user = await createGoogleUser(profileData);
             return done(null, user);
         } catch (err) {
             return done(err, null);
@@ -136,7 +129,7 @@ passport.deserializeUser(async (id, done) => {
         done(null, user);
     } catch (err) {
         done(err, null);
-    }
+    } 
 });
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));

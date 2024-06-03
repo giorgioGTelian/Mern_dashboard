@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import passportLocalMongoose from 'passport-local-mongoose';
 
 const UserSchema = new mongoose.Schema({
+    id: {
+        type: String,
+    }, 
     name: {
         type: String,
         required: true,
@@ -20,9 +23,6 @@ const UserSchema = new mongoose.Schema({
         min: 6,
         max: 100,
     },
-    id: {
-        type: String,
-    }, 
     city: String,
     state: String,
     country: String,

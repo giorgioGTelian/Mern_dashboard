@@ -38,7 +38,7 @@ export const createUser = async (req, res) => {
 export const createGoogleUser = async (profileData) => {
     console.log(profileData);
     try {
-        const user = await await User.findOne({ id: profileData.id });
+        let user = await User.findOne({ id: profileData.id });
         if (!user) {
             user = new User(profileData);
             await user.save();
