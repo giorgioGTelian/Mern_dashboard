@@ -1,5 +1,7 @@
 /*** passport configuration ****/
 import passport from 'passport';
+import { Strategy as LocalStrategy } from 'passport-local';
+
 import User from '../models/User.js';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { createGoogleUser } from '../controllers/general.js';
@@ -53,9 +55,6 @@ passport.deserializeUser(async (id, done) => {
 
 /* general passport configuration */
 
-/* const LocalStrategy = passportLocal.Strategy;
-const JwtStrategy = passportJwt.Strategy;
-const ExtractJwt = passportJwt.ExtractJwt;
 
 passport.use(new LocalStrategy({
     usernameField: 'email',
@@ -79,7 +78,7 @@ passport.use(new LocalStrategy({
 }
 ));
 
-passport.use(new JwtStrategy({
+/* passport.use(new JwtStrategy({
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.JWT_SECRET
 }, async (jwtPayload, done) => {
@@ -95,8 +94,7 @@ passport.use(new JwtStrategy({
         return done(error);
     }
 }
-)); */
+)); 
+ */
 
 
-
-/************************************************************************************* */

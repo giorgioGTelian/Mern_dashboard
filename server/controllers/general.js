@@ -36,7 +36,7 @@ export const createUser = async (req, res) => {
 }
 
 export const createGoogleUser = async (profileData) => {
-    console.log(profileData);
+    //console.log(profileData);
     try {
         let user = await User.findOne({ id: profileData.id });
         if (!user) {

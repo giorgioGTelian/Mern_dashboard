@@ -7,7 +7,12 @@ const ClassRoomSchema = new mongoose.Schema({
     },
     nameClassroom: String,
     descriptionClassroom: String,
-    locationClassroom: String,
+    locationClassroom: {
+        type: String,
+        enum: ["rione verde", "piazza delle erbe"],
+        default: "piazza delle erbe",
+    },
+    cityClassroom: String,
     numberOfStudents: Number,
     students: [String],
     teacher: [String],

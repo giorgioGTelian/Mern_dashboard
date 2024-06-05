@@ -17574,3 +17574,30 @@ export const dataAffiliateStat = [
       subjectColor: "#F38F35",
     },
   ];
+
+  export const dataClassRoom = [
+    {
+      id: uuidv4(),
+      nameClassroom: "Sala 1",
+      descriptionClassroom: "",
+      locationClassroom: "piazza delle erbe",
+      cityClassroom: "Faenza",
+      numberOfStudents: 3,
+      students: [],
+      teacher: [],
+      lessons: [],
+      notes: "",
+    },
+    {
+      id: uuidv4(),
+      nameClassroom: "Sala 2",
+      descriptionClassroom: "",
+      locationClassroom: "piazza delle erbe",
+      cityClassroom: "Faenza",
+      numberOfStudents: 4,
+      students: [],
+      teacher: [],
+      lessons: [],
+      notes: "",
+    },
+  ];
