@@ -50,9 +50,8 @@ passport.deserializeUser(async (id, done) => {
 });
 
 
-    /** passport session **/
 
-/* passport configuration */
+/* general passport configuration */
 
 /* const LocalStrategy = passportLocal.Strategy;
 const JwtStrategy = passportJwt.Strategy;
