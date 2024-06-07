@@ -17538,16 +17538,20 @@ export const dataAffiliateStat = [
       lessons: Array(5).fill({
         _id: uuidv4(),
         duration: 1,
-        lessons: ["lessonId1", "lessonId2", "lessonId3", "lessonId4", "lessonId5"] // replace with actual lesson IDs
+        lessons: ["Matematica", "Informatica", "Inglese", "Storia", "Tecnologia"] 
       })
     },
     {
       id: uuidv4(),
-      name: "pacchetto da 10 lezioni"
-    },
-    {
-      id: uuidv4(),
-      name: "pacchetto da 20 lezioni"
+      name: "pacchetto da 10 lezioni",
+      price: 240,
+      duration: 10,
+      counterLessons: 10,
+      lessons: Array(10).fill({
+        _id: uuidv4(),
+        duration: 1,
+        lessons: ["Matematica", "Informatica", "Inglese", "Storia", "Tecnologia"] 
+      })
     },
   ];
 
@@ -17563,7 +17567,15 @@ export const dataAffiliateStat = [
     {
       id: uuidv4(),
       name: "Inglese"
-    }
+    },
+    {
+      id: uuidv4(),
+      name: "Storia"
+    },
+    {
+      id: uuidv4(),
+      name: "Tecnologia"
+    },
   ];
 
   export const dataSubjects = [

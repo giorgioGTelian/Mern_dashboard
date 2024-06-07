@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { v4 as uuidv4 } from 'uuid';
-import Lessons from './Lessons';
+import Subject from './Subject';
 
 const lessonDurationSchema = new mongoose.Schema({
     _id: {
@@ -11,7 +11,7 @@ const lessonDurationSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    lessonsName: [Lessons.schema],
+    lessonsName: [Subject.schema],
 });
 
 const LessonDuration = mongoose.model('LessonDuration', lessonDurationSchema);
