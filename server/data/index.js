@@ -17517,19 +17517,37 @@ export const dataAffiliateStat = [
   export const dataLessonsPackages = [
     {
       id: uuidv4(),
-      name: "lezione singola"
+      name: "lezione singola",
+      price: 30,
+      duration: 1,
+      counterLessons: 1,
+      lessons: [
+        {
+          _id: uuidv4(),
+          duration: 1,
+          lessonsName: ["Matematica"] 
+        }
+      ]
     },
     {
       id: uuidv4(),
-      name: "lezione da 5 ore"
+      name: "pacchetto da 5 lezioni",
+      price: 120,
+      duration: 5,
+      counterLessons: 5,
+      lessons: Array(5).fill({
+        _id: uuidv4(),
+        duration: 1,
+        lessons: ["lessonId1", "lessonId2", "lessonId3", "lessonId4", "lessonId5"] // replace with actual lesson IDs
+      })
     },
     {
       id: uuidv4(),
-      name: "lezione da 10 ore"
+      name: "pacchetto da 10 lezioni"
     },
     {
       id: uuidv4(),
-      name: "lezione da 20 ore"
+      name: "pacchetto da 20 lezioni"
     },
   ];
 
