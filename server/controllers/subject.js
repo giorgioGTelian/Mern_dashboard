@@ -33,3 +33,12 @@ export const createSubject = async (req, res) => {
         res.status(409).json({ message: error.message });
     }
 }
+
+export const updateSubject = async (req, res) => {
+    const { id } = req.params;
+    const { name, description } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No subject with id: ${id}`);
+    const updatedSubject = { name, description, _id: id };
+    await Subject.findByIdAndUpdate(id, updatedSubject, { new: true });
+    res.json(updatedSubject);
+}
