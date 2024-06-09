@@ -45,7 +45,8 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
     try {
-        const user = await User.findById(id);
+        const user = await User.findOne({ id: id }); 
+        console.log('deserializeUser', user);
         done(null, user);
     } catch (err) {
         done(err, null);
@@ -56,7 +57,7 @@ passport.deserializeUser(async (id, done) => {
 
 /* general passport configuration */
 
-
+/*
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -78,6 +79,7 @@ passport.use(new LocalStrategy({
     }
 }
 ));
+*/
 
 /* passport.use(new JwtStrategy({
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),

@@ -32,7 +32,7 @@ import passport from 'passport';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 9000; // process.env.PORT is for deployment
-authRoutes(app);
+
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
@@ -47,6 +47,8 @@ app.use(cookieSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+authRoutes(app);
 
 /* routes */
 //for user and admin login and registration
