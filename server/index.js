@@ -10,8 +10,10 @@ import generalRoutes from './routes/general.js';
 import teacherRoutes from './routes/teacher.js';
 import authRoutes from './routes/authRoutes.js';
 import './services/passport.js';
+import cookieSession from 'cookie-session';
+import passport from 'passport';
 
-/* data import */ 
+/******** data import *********/ 
 //import User from './models/User.js';
 //import { dataUser, dataStudent } from './data/index.js';
 
@@ -38,6 +40,13 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+/** cookie session **/
+app.use(cookieSession({ 
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [process.env.COOKIE_KEY]
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* routes */
 //for user and admin login and registration
