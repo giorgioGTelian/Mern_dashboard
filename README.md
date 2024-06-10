@@ -11,6 +11,8 @@ a dashboard using mern stack
 - morgan HTTP request logger middleware for Node.js.
 - nodemon A utility that monitors for any changes in your source code and automatically restarts your server.
 - body parser Middleware for parsing incoming request bodies in a middleware before your handlers, available under the req.body property.
+- cookie-session Simple cookie-based session middleware. 
+- passport for authentication with google and mongoose
 
 ## framework and libraries for frontend
 - react
