@@ -25,7 +25,11 @@ import passport from 'passport';
 
 //import Subject from './models/Subject.js';
 //import { dataSubjects } from './data/index.js';
+
 /******************************************************* */
+
+import LessonPackage from './models/LessonsPackages.js';
+import { dataLessonsPackages } from './data/index.js';
 
 
 /* configuration */
@@ -123,7 +127,7 @@ mongoose.connect(process.env.MONGO_URL)
     // Transaction.insertMany(dataTransaction);
     
     //Student.insertMany(dataStudent);
-
+    LessonPackage.insertMany(dataLessonsPackages);
     
     //DONE
     //Subject.insertMany(dataSubjects);

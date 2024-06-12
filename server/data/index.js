@@ -211,13 +211,18 @@ import { v4 as uuidv4 } from "uuid";
       id: uuidv4(),
       name: "lezione singola",
       price: 30,
-      duration: 1,
+      durationPackage: 1,
       counterLessons: 1,
       lessons: [
         {
           _id: uuidv4(),
-          duration: 1,
-          lessonsName: ["Matematica"] 
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Matematica",
+              description: "",
+              subjectColor: "#f33535",
+            }
+          ] 
         }
       ]
     },
@@ -225,25 +230,39 @@ import { v4 as uuidv4 } from "uuid";
       id: uuidv4(),
       name: "pacchetto da 5 lezioni",
       price: 120,
-      duration: 5,
+      durationPackage: 5,
       counterLessons: 5,
-      lessons: Array(5).fill({
-        _id: uuidv4(),
-        duration: 1,
-        lessons: ["Matematica", "Informatica", "Inglese", "Storia", "Tecnologia"] 
-      })
+      lessons: [
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Inglese",
+              description: "",
+              subjectColor: "#343DEB",
+            }
+          ] 
+        }
+      ]
     },
     {
       id: uuidv4(),
       name: "pacchetto da 10 lezioni",
       price: 240,
-      duration: 10,
+      durationPackage: 10,
       counterLessons: 10,
-      lessons: Array(10).fill({
-        _id: uuidv4(),
-        duration: 1,
-        lessons: ["Matematica", "Informatica", "Inglese", "Storia", "Tecnologia"] 
-      })
+      lessons: [
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Tedesco",
+              description: "",
+              subjectColor: "#010101",
+            }
+          ] 
+        }
+      ]
     },
   ];
 

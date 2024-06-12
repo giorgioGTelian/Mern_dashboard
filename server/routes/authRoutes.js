@@ -12,7 +12,7 @@ export default (app) => {
         req.logout();
         res.redirect('/auth/current_user');
     });
-
+    
     app.get('/auth/current_user', (req, res) => {
         console.log('current_user', req.user);
         res.send(req.user);
