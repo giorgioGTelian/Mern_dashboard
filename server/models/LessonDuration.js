@@ -11,7 +11,7 @@ const lessonDurationSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    lessonsName: [Subject.schema.name],
+    lessonsName: [Subject.schema],
 });
 
 const LessonDuration = mongoose.model('LessonDuration', lessonDurationSchema);

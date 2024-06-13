@@ -242,6 +242,46 @@ import { v4 as uuidv4 } from "uuid";
               subjectColor: "#343DEB",
             }
           ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Storia",
+              description: "",
+              subjectColor: "#FFA500",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Scienze",
+              description: "",
+              subjectColor: "#008000",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Geografia",
+              description: "",
+              subjectColor: "#0000FF",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Arte",
+              description: "",
+              subjectColor: "#800080",
+            }
+          ] 
         }
       ]
     },
@@ -256,9 +296,49 @@ import { v4 as uuidv4 } from "uuid";
           _id: uuidv4(),
           durationLesson: 1,
           lessonsName: [{
-              name: "Tedesco",
+              name: "Inglese",
               description: "",
-              subjectColor: "#010101",
+              subjectColor: "#343DEB",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Storia",
+              description: "",
+              subjectColor: "#FFA500",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Scienze",
+              description: "",
+              subjectColor: "#008000",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Geografia",
+              description: "",
+              subjectColor: "#0000FF",
+            }
+          ] 
+        },
+        {
+          _id: uuidv4(),
+          durationLesson: 1,
+          lessonsName: [{
+              name: "Arte",
+              description: "",
+              subjectColor: "#800080",
             }
           ] 
         }
