@@ -1,4 +1,8 @@
 import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
+import students from './Student.js';
+import subject from './Subject.js';
+
 const { Schema } = mongoose;
 
 const teacherSchema = new Schema({
@@ -9,9 +13,9 @@ const teacherSchema = new Schema({
     name: String,
     phoneNumberTeacher: String,
     emailTeacher: String,
-    subjects: [String],
-    students: [String],
-    teacherDocuments: [String], 
+    subjects: [subject.schema],
+    students: [students.schema],
+    teacherDocuments: [Buffer], 
     teacherPayments: [String],
     teacherBilling: {
         type: String,

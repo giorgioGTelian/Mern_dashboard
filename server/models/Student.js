@@ -1,4 +1,10 @@
 import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
+import teacher from './Teacher.js';
+import subject from './Subject.js';
+import LessonPackage from './LessonsPackages.js';
+//import client from './Client.js';
+
 const { Schema } = mongoose;
 
 const studentSchema = new Schema({
@@ -10,13 +16,12 @@ id: {
     email: String,
     password: String,
     phoneNumber: String,
-    subjects: [String],
+    subjects: [subject.schema],
     grade: Number,
     school: String,
     client:[String],
-    teachers: [String],
-    lessonsPackages: [String],
-    lessons: [String],
+    teachers: [teacher.schema],
+    lessonsPackages: [LessonPackage.schema],
     documents: String,
     notes: String,
 });
