@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import teacher from './Teacher.js';
 import subject from './Subject.js';
 import LessonPackage from './LessonsPackages.js';
-//import client from './Client.js';
+import client from './Client.js';
 
 const { Schema } = mongoose;
 
@@ -19,8 +19,8 @@ id: {
     subjects: [subject.schema],
     grade: Number,
     school: String,
-    client:[String],
-    teachers: [teacher.schema],
+    client:[client.schema],
+    teachers: [{ type: Schema.Types.ObjectId, ref: 'Teacher' }],
     lessonsPackages: [LessonPackage.schema],
     documents: String,
     notes: String,
