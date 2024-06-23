@@ -8,7 +8,6 @@ import { Box } from '@mui/material';
 const about = () => {
     return (
         <>
-
         <Box mt={2} p={10}>
         <ActiveLastBreadcrumb />
         <br />
