@@ -33,7 +33,7 @@ const pages = [
   },
 ];
 
-const Page = ({ children }) => {
+const Page = ({ teachersName , children }) => {
   const [activeLink, setActiveLink] = useState('');
   useEffect(() => {
     setActiveLink(window && window.location ? window.location.pathname : '');
@@ -51,7 +51,7 @@ const Page = ({ children }) => {
             gutterBottom
             sx={{ color: 'common.white' }}
           >
-            Account settings
+            {teachersName} impostazioni
           </Typography>
           <Typography variant="h6" sx={{ color: 'common.white' }}>
             Change account information and settings

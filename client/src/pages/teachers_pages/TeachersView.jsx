@@ -13,11 +13,14 @@ const TeachersView = ({ Teacher, subjects, students }) => {
   const validationSchema = yup.object({
     // ... Docenti-specific validation schema ...
   });
+  //change teachers and teacher information dynamically from previous page
+  const teachersName = Teacher ? Teacher.name : '';
 
   const title = 'Inserisci e modifica docenti';
 
   return (
     <General
+      teachersname={teachersName}
       initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
