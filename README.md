@@ -1,3 +1,5 @@
+![MERN](https://img.shields.io/badge/MERN-blue)
+![VER 1.0](https://img.shields.io/badge/VER-1.0-green)
 # Mern_dashboard
 a dashboard using mern stack
 
